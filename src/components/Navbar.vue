@@ -63,6 +63,32 @@ const isActiveLink = (routePath) => {
                 ]"
                 >Add Job</RouterLink
               >
+              <RouterLink
+                to="/payments"
+                :class="[
+                  isActiveLink('/payments')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-white',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                ]"
+                >payments</RouterLink
+              >
+              <RouterLink
+                to="/completePayments"
+                :class="[
+                  isActiveLink('/completePayments')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-white',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                ]"
+                >completePayments</RouterLink
+              >
             </div>
           </div>
         </div>
