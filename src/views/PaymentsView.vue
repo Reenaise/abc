@@ -24,7 +24,7 @@
                     <label for="airtel">Airtel Money</label>
                     </div>
                     
-                    
+                    // testing
                     <div class="form-check bg-success ">
                     <input type="radio" name="payment" id="mpesa" value="mpesa">
                     <label for="mpesa">Mpesa</label>
