@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+// import { RouterLink } from 'vue-router';
 import JobListing from './JobListing.vue';
 import { reactive, defineProps, onMounted } from 'vue';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
@@ -30,16 +30,19 @@ onMounted(async () => {
 });
 </script>
 
+
 <template>
-  <section class="bg-blue-50 px-4 py-10">
+  <div class="flex flex-col min-h-screen">
+  <section class="bg-customGreen px-4 py-10">
     <div class="container-xl lg:container m-auto">
-      <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">
-        Browse Jobs
+      <h2 class="text-3xl font-bold text-gray-50 mb-6 text-center">
+        Enjoy our services
       </h2>
       <!-- Show loading spinner while loading is true -->
       <div v-if="state.isLoading" class="text-center text-gray-500 py-6">
         <PulseLoader />
       </div>
+      
 
       <!-- Shoe job listing when done loading -->
       <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -56,7 +59,7 @@ onMounted(async () => {
     <RouterLink
       to="/jobs"
       class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-      >View All Jobs</RouterLink
-    >
+      >Get Started</RouterLink>
   </section>
+  </div>
 </template>

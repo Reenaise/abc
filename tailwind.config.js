@@ -7,7 +7,10 @@ export default {
         sans: ['Poppins', 'sans-serif'],
       },
       gridTemplateColumns: {
-        '70/30': '70% 28%',
+        '50/50': '50% 58%',
+      },
+        colors: {
+        customGreen:'#3a9e25' , // Define your custom green color here
       },
     },
   },

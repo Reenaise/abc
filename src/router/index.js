@@ -7,6 +7,11 @@ import AddJobView from '@/views/AddJobView.vue';
 import EditJobView from '@/views/EditJobView.vue';
 import login from "@/views/login.vue";
 import register from "@/views/register.vue";
+import PaymentsView from '@/views/PaymentsView.vue';
+import CompletePaymentsView from '@/views/CompletePaymentsView.vue';
+import Register from "@/views/register.vue";
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,9 +42,35 @@ const router = createRouter({
       component: EditJobView,
     },
     {
+      path: '/payments',
+      name: 'payments',
+      component: PaymentsView,
+    },
+
+    {
+      path: '/completePayments',
+      name: 'completePayments',
+      component: CompletePaymentsView,
+    },
+  //     {
+  //   path: '/completePayments',
+  //   name: 'completePayments',
+  //   component: CompletePaymentsView,
+  // },
+    {
       path: '/:catchAll(.*)',
       name: 'not-found',
       component: NotFoundView,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login,
+    },
+    {
+      path: 'register',
+      name: 'register',
+      component: Register,
     }
   ],
 });

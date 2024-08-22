@@ -1,0 +1,5 @@
+"Id","CommandLine","ExecutionStatus","StartExecutionTime","EndExecutionTime"
+"1","try { . ""c:\Users\DELL\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\browser\media\shellIntegration.ps1"" } catch {}","Completed","8/20/2024 5:44:25 AM","8/20/2024 5:44:25 AM"
+"2","git push origin iddy","Completed","8/20/2024 5:44:48 AM","8/20/2024 5:44:51 AM"
+"3","git push origin iddy","Completed","8/20/2024 5:49:51 AM","8/20/2024 5:49:53 AM"
+"4","git push origin iddy","Completed","8/20/2024 5:55:05 AM","8/20/2024 5:55:09 AM"
