@@ -1,10 +1,19 @@
 
 const express = require("express");
+const cors = require("cors");
 const db = require("./config/db");
 const server = require("./routes/server");
 
 const app = express();
-const port = 3000;
+
+const corsOptions  = {
+  origin: "http://localhost:3000"
+} 
+
+app.use(cors(corsOptions))
+// const port = 3000;
+const port = 5001;
+
 
 db.connect((err) => {
   if (err) {

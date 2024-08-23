@@ -47,6 +47,26 @@ router.post("/", (req, res) => {
   });
 });
 
+
+// CREATE IN completepayment
+// router.post("/", (req, res) => {
+//   const bill = req.body.bill;
+//   const pNumber = req.body.pNumber;
+
+//   const newTodo = { bill, pNumber};
+
+//   console.log(newTodo.bill)
+//   const sql = "INSERT INTO completepayment (bill, pNumber) VALUES (?, ?)";
+//   db.query(sql, [bill, pNumber], (err, result) => {
+//     if (err) {
+//       throw err;
+//     }
+//     newTodo.id = result.insertId;
+//     res.json(newTodo);
+//   });
+// });
+
+
 // UPDATE
 router.put("/:id", (req, res) => {
   const id = req.params.id;

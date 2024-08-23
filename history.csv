@@ -37,3 +37,1017 @@
 "36","git pull","Completed","8/21/2024 5:40:02 AM","8/21/2024 5:40:04 AM"
 "37","git branch","Completed","8/21/2024 5:40:58 AM","8/21/2024 5:40:58 AM"
 "38","git checkout ","Completed","8/21/2024 6:57:21 AM","8/21/2024 6:57:21 AM"
+    [Symbol(kCapture)]: false,
+    [Symbol(kSetNoDelay)]: true,
+    [Symbol(kSetKeepAlive)]: false,
+    [Symbol(kSetKeepAliveInitialDelay)]: 0,
+    [Symbol(kBytesRead)]: 0,
+    [Symbol(kBytesWritten)]: 0
+  },
+  _consuming: true,
+  _dumped: false,
+  next: [Function: next],
+  baseUrl: '/todos',
+  originalUrl: '/todos',
+  _parsedUrl: Url {
+    protocol: null,
+    slashes: null,
+    auth: null,
+    host: null,
+    port: null,
+    hostname: null,
+    hash: null,
+    search: null,
+    query: null,
+    pathname: '/',
+    path: '/',
+    href: '/',
+    _raw: '/'
+  },
+  params: {},
+  query: {},
+  res: <ref *3> ServerResponse {
+    _events: [Object: null prototype] { finish: [Function: bound resOnFinish
+    _eventsCount: 1,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: false,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: true,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    strictContentLength: false,
+    _contentLength: null,
+    _hasBody: true,
+    _trailer: '',
+    finished: false,
+    _headerSent: false,
+    _closed: false,
+    socket: <ref *1> Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _closeAfterHandlingError: false,
+      _events: [Object],
+      _readableState: [ReadableState],
+      _writableState: [WritableState],
+      allowHalfOpen: true,
+      _maxListeners: undefined,
+      _eventsCount: 8,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: [Server],
+      _server: [Server],
+      parser: [HTTPParser],
+      on: [Function: socketListenerWrap],
+      addListener: [Function: socketListenerWrap],
+      prependListener: [Function: socketListenerWrap],
+      setEncoding: [Function: socketSetEncoding],
+      _paused: false,
+      _httpMessage: [Circular *3],
+      [Symbol(async_id_symbol)]: 25,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(shapeMode)]: true,
+      [Symbol(kCapture)]: false,
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(kSetKeepAlive)]: false,
+      [Symbol(kSetKeepAliveInitialDelay)]: 0,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0
+    },
+    _header: null,
+    _keepAliveTimeout: 5000,
+    _onPendingData: [Function: bound updateOutgoingData],
+    req: [Circular *2],
+    _sent100: false,
+    _expect_continue: false,
+    _maxRequestsPerSocket: 0,
+    locals: [Object: null prototype] {},
+    [Symbol(shapeMode)]: false,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesWritten)]: 0,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] { 'x-powered-by': [Array
+    [Symbol(errored)]: null,
+    [Symbol(kHighWaterMark)]: 16384,
+    [Symbol(kRejectNonStandardBodyWrites)]: false,
+    [Symbol(kUniqueHeaders)]: null
+  },
+  body: { id: '6', title: 'Bury the big dog' },
+  _body: true,
+  length: undefined,
+  _eventsCount: 0,
+  route: Route { path: '/', stack: [ [Layer] ], methods: { post: true } },
+  [Symbol(shapeMode)]: true,
+  [Symbol(kCapture)]: false,
+  [Symbol(kHeaders)]: {
+    'content-length': '59',
+    'accept-encoding': 'gzip, deflate, br',
+    accept: '*/*',
+    'user-agent': 'Thunder Client (https://www.thunderclient.com)',
+    'content-type': 'application/json',
+    host: 'localhost:3000',
+    connection: 'close'
+  },
+  [Symbol(kHeadersCount)]: 14,
+  [Symbol(kTrailers)]: null,
+  [Symbol(kTrailersCount)]: 0
+}
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:50
+      throw err;
+      ^
+
+Error: Unknown column 'aaa' in 'field list'
+    at Packet.asError (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\
+    at Query.execute (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\l
+    at Connection.handlePacket (C:\id\teamAlfa\alphacrew\backend\node_module
+    at PacketParser.onPacket (C:\id\teamAlfa\alphacrew\backend\node_modules\
+    at PacketParser.executeStart (C:\id\teamAlfa\alphacrew\backend\node_modu
+    at Socket.<anonymous> (C:\id\teamAlfa\alphacrew\backend\node_modules\mys
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'aaa' in 'field list'",
+  sql: 'INSERT INTO books (title, author, completed) VALUES (aaa,aaa,aaa )',
+  fatal: true
+}
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+Node.js v20.16.0
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+
+
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+
+
+Node.js v20.16.0
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:06:32 GMT-0700 (Pacific Daylight Time)] Method: POST /to
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:50
+      throw err;
+      ^
+
+Error: Unknown column 'aaa' in 'field list'
+    at Packet.asError (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\
+    at Query.execute (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\l
+    at Connection.handlePacket (C:\id\teamAlfa\alphacrew\backend\node_module
+    at PacketParser.onPacket (C:\id\teamAlfa\alphacrew\backend\node_modules\
+    at PacketParser.executeStart (C:\id\teamAlfa\alphacrew\backend\node_modu
+    at Socket.<anonymous> (C:\id\teamAlfa\alphacrew\backend\node_modules\mys
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'aaa' in 'field list'",
+  sql: 'INSERT INTO books (title, author, completed) VALUES (aaa, aaa, aaa)'
+  fatal: true
+}
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'aaa' in 'field list'",
+  sql: 'INSERT INTO books (title, author, completed) VALUES (aaa, aaa, aaa)'
+  fatal: true
+}
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlState: '42S22',
+  sqlMessage: "Unknown column 'aaa' in 'field list'",
+  sql: 'INSERT INTO books (title, author, completed) VALUES (aaa, aaa, aaa)'
+  fatal: true
+}
+  fatal: true
+}
+
+Node.js v20.16.0
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:47
+  console.log(new)
+                 ^
+
+SyntaxError: Unexpected token ')'
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:47
+  console.log(newTodo.)
+                      ^
+
+SyntaxError: Unexpected token ')'
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:09:32 GMT-0700 (Pacific Daylight Time)] Method: POST /to
+Bury the big dog
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:51
+      throw err;
+      ^
+
+Error: Column 'author' cannot be null
+    at Packet.asError (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\
+    at Query.execute (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\l
+    at Connection.handlePacket (C:\id\teamAlfa\alphacrew\backend\node_module
+    at PacketParser.onPacket (C:\id\teamAlfa\alphacrew\backend\node_modules\
+    at PacketParser.executeStart (C:\id\teamAlfa\alphacrew\backend\node_modu
+    at Socket.<anonymous> (C:\id\teamAlfa\alphacrew\backend\node_modules\mys
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_BAD_NULL_ERROR',
+  errno: 1048,
+  sqlState: '23000',
+  sqlMessage: "Column 'author' cannot be null",
+  sql: "INSERT INTO books (title, author, completed) VALUES ('Bury the big d
+  fatal: true
+}
+
+}
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+Terminate batch job (Y/N)? y
+Terminate batch job (Y/N)? y
+PS C:\id\teamAlfa\alphacrew\backend> npm run dev
+
+> backend@1.0.0 dev
+> nodemon databaseIndex.js
+
+[nodemon] 3.1.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+> backend@1.0.0 dev
+> nodemon databaseIndex.js
+
+[nodemon] 3.1.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+> nodemon databaseIndex.js
+
+[nodemon] 3.1.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+[nodemon] 3.1.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:14:18 GMT-0700 (Pacific Daylight Time)] Method: POST /to
+Bury the big dog
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:19:10 GMT-0700 (Pacific Daylight Time)] Method: POST /to
+[Thu Aug 22 2024 02:19:19 GMT-0700 (Pacific Daylight Time)] Method: POST /do
+Bury the big dog
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:136
+app.use("/dos", todos);
+                ^
+
+ReferenceError: todos is not defined
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:22:43 GMT-0700 (Pacific Daylight Time)] Method: POST /se
+book1
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:24:53 GMT-0700 (Pacific Daylight Time)] Method: GET /ser
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:15
+      throw err;
+      ^
+
+Error: Table 'todo_db.todos' doesn't exist
+    at Packet.asError (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\
+    at Query.execute (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\l
+    at Connection.handlePacket (C:\id\teamAlfa\alphacrew\backend\node_module
+    at PacketParser.onPacket (C:\id\teamAlfa\alphacrew\backend\node_modules\
+    at PacketParser.executeStart (C:\id\teamAlfa\alphacrew\backend\node_modu
+    at Socket.<anonymous> (C:\id\teamAlfa\alphacrew\backend\node_modules\mys
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlState: '42S02',
+  sqlMessage: "Table 'todo_db.todos' doesn't exist",
+  sql: 'SELECT * FROM todos',
+  fatal: true
+}
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+Terminate batch job (Y/N)? y
+PS C:\id\teamAlfa\alphacrew\backend> npm run dev
+
+> backend@1.0.0 dev       
+> nodemon databaseIndex.js
+
+[nodemon] 3.1.4
+[nodemon] to restart at any time, enter `rs`  
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node databaseIndex.js`    
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:25:21 GMT-0700 (Pacific Daylight Time)] Method: GET /ser
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:15
+      throw err;
+      ^
+
+Error: Table 'todo_db.todos' doesn't exist
+    at Packet.asError (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\
+    at Query.execute (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\l
+    at Connection.handlePacket (C:\id\teamAlfa\alphacrew\backend\node_module
+    at PacketParser.onPacket (C:\id\teamAlfa\alphacrew\backend\node_modules\
+    at PacketParser.executeStart (C:\id\teamAlfa\alphacrew\backend\node_modu
+    at Socket.<anonymous> (C:\id\teamAlfa\alphacrew\backend\node_modules\mys
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlState: '42S02',
+  sqlMessage: "Table 'todo_db.todos' doesn't exist",
+  sql: 'SELECT * FROM todos',
+  fatal: true
+}
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:25:52 GMT-0700 (Pacific Daylight Time)] Method: GET /ser
+[Thu Aug 22 2024 02:34:00 GMT-0700 (Pacific Daylight Time)] Method: GET /ser
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:35:14 GMT-0700 (Pacific Daylight Time)] Method: GET /ser
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:29
+      throw err;
+      ^
+
+Error: You have an error in your SQL syntax; check the manual that correspone 1
+    at Packet.asError (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\
+    at Query.execute (C:\id\teamAlfa\alphacrew\backend\node_modules\mysql2\l
+    at Connection.handlePacket (C:\id\teamAlfa\alphacrew\backend\node_module
+    at PacketParser.onPacket (C:\id\teamAlfa\alphacrew\backend\node_modules\
+    at PacketParser.executeStart (C:\id\teamAlfa\alphacrew\backend\node_modu
+    at Socket.<anonymous> (C:\id\teamAlfa\alphacrew\backend\node_modules\mys
+    at Socket.emit (node:events:519:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5) {
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlState: '42000',
+  sqlMessage: "You have an error in your SQL syntax; check the manual that c' at line 1",
+  sql: 'SELECT * FROM books WHERE id = ${id}',
+  fatal: true
+}
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:25
+  const sql = 'SELECT * FROM books WHERE id = ${id};
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Invalid or unexpected token
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:25
+  const sql = 'SELECT * FROM books WHERE id = ${id}`;
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Invalid or unexpected token
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\routes\server.js:25
+  const sql = SELECT * FROM books WHERE id = ${id}`;
+                            ^^^^^
+
+SyntaxError: Unexpected identifier 'books'
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Module.require (node:internal/modules/cjs/loader:1233:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+
+Node.js v20.16.0
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+
+Node.js v20.16.0
+
+Node.js v20.16.0
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:37:01 GMT-0700 (Pacific Daylight Time)] Method: GET /ser
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:38:30 GMT-0700 (Pacific Daylight Time)] Method: PUT /ser
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[Thu Aug 22 2024 02:41:23 GMT-0700 (Pacific Daylight Time)] Method: DELETE /
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:154
+} );
+^
+
+SyntaxError: Unexpected token '}'
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:140
+  const title = req.body.title;
+                ^
+
+ReferenceError: req is not defined
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:163
+});
+
+
+SyntaxError: Unexpected end of input
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:140
+  const title = req.body.title;
+                ^
+
+ReferenceError: req is not defined
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:163
+});
+
+
+SyntaxError: Unexpected end of input
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:140
+  const title = req.body.title;
+                ^
+
+ReferenceError: req is not defined
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:140
+  const title = req.body.title;
+                ^
+
+ReferenceError: req is not defined
+    at Object.<anonymous> (C:\id\teamAlfa\alphacrew\backend\databaseIndex.js
+    at Module._compile (node:internal/modules/cjs/loader:1358:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:154
+} );
+^
+
+SyntaxError: Unexpected token '}'
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+C:\id\teamAlfa\alphacrew\backend\databaseIndex.js:154
+} );
+^
+
+SyntaxError: Unexpected token '}'
+    at wrapSafe (node:internal/modules/cjs/loader:1281:20)
+    at Module._compile (node:internal/modules/cjs/loader:1321:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1416:10)
+    at Module.load (node:internal/modules/cjs/loader:1208:32)
+    at Module._load (node:internal/modules/cjs/loader:1024:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/ru
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.16.0
+[nodemon] app crashed - waiting for file changes before starting...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Server is running on port: 3000
+Connected to database MYSQL
+[nodemon] restarting due to changes...
+[nodemon] restarting due to changes...
+[nodemon] starting `node databaseIndex.js`
+Connected to database MYSQL
+Terminate batch job (Y/N)? y
+PS C:\id\teamAlfa\alphacrew\backend> git status
+On branch iddy
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../history.csv
+        modified:   ../index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\id\teamAlfa\alphacrew\backend> git add .
+warning: in the working copy of 'backend/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/package.json', LF will be replaced 
+by CRLF the next time Git touches it
+PS C:\id\teamAlfa\alphacrew\backend> git pull
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 13 (delta 8), reused 13 (delta 8), pack-reused 0 (from 0)     
+Unpacking objects: 100% (13/13), 1.12 KiB | 8.00 KiB/s, done.
+From https://github.com/Reenaise/AlphaCrew    
+   10b16c4..2c6781c  main       -> origin/main
+ * [new branch]      koly       -> origin/koly
+ src/router/index.js | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+PS C:\id\teamAlfa\alphacrew\backend> git status
+On branch iddy
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   config/db.js
+        new file:   databaseIndex.js
+        new file:   package-lock.json
+        new file:   package.json
+        new file:   routes/server.js
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+PS C:\id\teamAlfa\alphacrew\backend> git add .
+PS C:\id\teamAlfa\alphacrew\backend> git status
+On branch iddy
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   config/db.js
+        new file:   databaseIndex.js
+        new file:   package-lock.json
+        new file:   package.json
+        new file:   routes/server.js
+
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)     
+        modified:   ../history.csv
+        modified:   ../index.html
+
+PS C:\id\teamAlfa\alphacrew\backend> git add ../history.csv
+PS C:\id\teamAlfa\alphacrew\backend> git add ../index.html 
+On branch iddy
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   config/db.js
+        new file:   databaseIndex.js
+        new file:   package-lock.json
+        new file:   package.json
+        new file:   routes/server.js
+        modified:   ../history.csv
+        modified:   ../index.html
+
+PS C:\id\teamAlfa\alphacrew\backend> git commit -m "back-end changes "      
+[iddy 1f3c9d0] back-end changes
+ 7 files changed, 1452 insertions(+), 12 deletions(-)
+ create mode 100644 backend/databaseIndex.js
+ create mode 100644 backend/package-lock.json
+ create mode 100644 backend/routes/server.js
+PS C:\id\teamAlfa\alphacrew\backend> git push
+fatal: The upstream branch of your current branch does not match
+the name of your current branch.  To push to the upstream branch
+on the remote, use
+
+    git push origin HEAD:main
+
+To push to the branch of the same name on the remote, use
+
+    git push origin HEAD
+
+    git push origin HEAD
+
+
+    git push origin HEAD
+
+
+
+
+To choose either option permanently, see push.default in 'git help config'.
+
+To avoid automatically configuring an upstream branch when its name
+won't match the local branch, see option 'simple' of branch.autoSetupMerge
+in 'git help config'.
+
+PS C:\id\teamAlfa\alphacrew\backend> git push origin HEAD:main
+fatal: unable to access 'https://github.com/Reenaise/AlphaCrew.git/': Could not resolve host: github.com
+PS C:\id\teamAlfa\alphacrew\backend> git push origin HEAD:main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 14.36 KiB | 1.44 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Reenaise/AlphaCrew.git
+   2c6781c..1f3c9d0  HEAD -> main
+PS C:\id\teamAlfa\alphacrew\backend> Get-History | Export-Csv -Path history.csv -NoTypeInformation
+PS C:\id\teamAlfa\alphacrew\backend> Get-History | Export-Csv -Path history.csv -NoTypeInformation
+PS C:\id\teamAlfa\alphacrew\backend> 
