@@ -93,12 +93,17 @@ input {
   width: 100%;
   max-width: 300px;
   padding: 10px;
-  background-color: black;
+  /* background-color: black; */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+  background-color: yellow;
+  margin-top: 10px;
+  width: 100px;
+  margin-left: 100px;
+  border-radius: 10px;
 }
 
 .login-button:hover {
