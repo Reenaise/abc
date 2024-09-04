@@ -37,7 +37,7 @@ const isActiveLink = (routePath) => {
                 ]"
                 >Home</RouterLink
               >
-              <RouterLink
+              <!-- <RouterLink
                 to="/jobs"
                 :class="[
                   isActiveLink('/jobs')
@@ -49,8 +49,8 @@ const isActiveLink = (routePath) => {
                   'rounded-md',
                 ]"
                 >Services</RouterLink
-              >
-              <RouterLink
+              > -->
+              <!-- <RouterLink
                 to="/jobs/add"
                 :class="[
                   isActiveLink('/jobs/add')
@@ -62,8 +62,8 @@ const isActiveLink = (routePath) => {
                   'rounded-md',
                 ]"
                 >Resources</RouterLink
-              >
-              <RouterLink
+              > -->
+              <!-- <RouterLink
                 to="/payments"
                 :class="[
                   isActiveLink('/payments')
@@ -75,7 +75,7 @@ const isActiveLink = (routePath) => {
                   'rounded-md',
                 ]"
                 >payments</RouterLink
-              >
+              > -->
               <RouterLink
                 to="/completePayments"
                 :class="[
@@ -94,9 +94,9 @@ const isActiveLink = (routePath) => {
           <div class>
             <div class="flex space-x-2">
               <RouterLink
-                to="/jobs"
+                to="/login"
                 :class="[
-                  isActiveLink('/jobs')
+                  isActiveLink('/login')
                     ? 'bg-green-900'
                     : 'hover:bg-gray-900 hover:text-white',
                   'text-white',
@@ -107,9 +107,9 @@ const isActiveLink = (routePath) => {
                 >Login</RouterLink
               >
               <RouterLink
-                to="/jobs"
+                to="/register"
                 :class="[
-                  isActiveLink('/jobs')
+                  isActiveLink('/register')
                     ? 'bg-green-900'
                     : 'hover:bg-gray-900 hover:text-white',
                   'text-white',
