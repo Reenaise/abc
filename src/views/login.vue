@@ -10,7 +10,6 @@
             type="email"
             id="email"
             required
-            placeholder="JohnDoe@outlook.com"
         />
       </div>
       <div class="form-group">
@@ -20,7 +19,7 @@
             type="password"
             id="password"
             required
-            placeholder="******"
+
         />
       </div>
       <button type="submit" class="login-button">Login</button>
@@ -53,7 +52,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #69d100;
+  background-color: #43B02A;
   font-family: Arial, sans-serif;
 }
 
@@ -81,12 +80,8 @@ label {
 }
 
 input {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  border: solid 1px #555555;
+  background-color: #43B02A;
 }
 
 .login-button {
