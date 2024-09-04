@@ -10,7 +10,6 @@
             type="text"
             id="name"
             required
-            placeholder="John Doe"
         />
       </div>
       <div class="form-group">
@@ -20,7 +19,6 @@
             type="email"
             id="email"
             required
-            placeholder="JohnDoe@outlook.com"
         />
       </div>
       <div class="form-group">
@@ -30,7 +28,6 @@
             type="password"
             id="password"
             required
-            placeholder="******"
         />
       </div>
       <div class="form-group">
@@ -71,7 +68,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #69d100;
+  background-color: #43B02A;
   font-family: Arial, sans-serif;
 }
 
@@ -101,6 +98,15 @@ label {
   display: block;
   margin-bottom: 5px;
   color: black;
+}
+
+input{
+  border: solid 1px #555555;
+  background-color: #43B02A;
+}
+
+#dob{
+  width: 100%;
 }
 
 .signup-button {
