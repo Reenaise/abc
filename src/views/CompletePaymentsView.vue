@@ -18,12 +18,12 @@
           </div>
 
           <div class="field3">
-            <label for="mPayment" id="mPayment">Mobile payment:</label> <br>
+            <label for="mPayment" id="mPayment">Mobile payment:</label> 
             <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required />
           </div>
 
           <div class="button1">
-            <button type="submit">Okay</button>
+            <button id="button" type="submit">Okay</button>
           </div>
         </form>
       </div>
@@ -95,7 +95,8 @@ h1 {
   width: 300px;
 }
 
-.field2 {
+.field2,
+.field3 {
   margin-top: 10px;
 }
 
@@ -111,24 +112,30 @@ input{
   justify-content: center;
   margin-bottom: 40vh;
   background-color: yellow;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100px;
   margin-left: 100px;
   border-radius: 10px;
+  border: solid 1px;
+
 }
 
 #bill,
-#pNumber {
+#pNumber,
+#mPayment {
   font-weight: 500;
 }
 
 .inputBill,
+.inputNumber,
 .inputNumber {
   border: solid 1px #555555;
   background-color: #43B02A;
 }
 
-
+#button{
+  width: 100px;
+}
 
 
 </style>

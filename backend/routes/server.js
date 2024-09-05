@@ -30,15 +30,53 @@ router.get("/:id", (req, res) => {
 
 
 // CREATE
-router.post("/", (req, res) => {
-  const title = req.body.title;
-  const author = req.body.author;
+// router.post("/", (req, res) => {
+//   const title = req.body.title;
+//   const author = req.body.author;
 
-  const newTodo = { title, author, completed: false };
+//   const newTodo = { title, author, completed: false };
+
+//   console.log(newTodo.title)
+//   const sql = "INSERT INTO books (title, author, completed) VALUES (?, ?, ?)";
+//   db.query(sql, [title, author, false], (err, result) => {
+//     if (err) {
+//       throw err;
+//     }
+//     newTodo.id = result.insertId;
+//     res.json(newTodo);
+//   });
+// });
+
+
+// CREATE
+// router.post("/", (req, res) => {
+//   const title = req.body.title;
+//   const author = req.body.author;
+
+//   const newTodo = { title, author, completed: false };
+
+//   console.log(newTodo.title)
+//   const sql = "INSERT INTO books (title, author, completed) VALUES (?, ?, ?)";
+//   db.query(sql, [title, author, false], (err, result) => {
+//     if (err) {
+//       throw err;
+//     }
+//     newTodo.id = result.insertId;
+//     res.json(newTodo);
+//   });
+// });
+
+
+//CREATE
+router.post("/payments", (req, res) => {
+  const mobile = req.body.mobile;
+  // const author = req.body.author;
+
+  const newTodo = { mobile };
 
   console.log(newTodo.title)
-  const sql = "INSERT INTO books (title, author, completed) VALUES (?, ?, ?)";
-  db.query(sql, [title, author, false], (err, result) => {
+  const sql = "INSERT INTO payments (mobile) VALUES (?)";
+  db.query(sql, [mobile], (err, result) => {
     if (err) {
       throw err;
     }
@@ -48,23 +86,25 @@ router.post("/", (req, res) => {
 });
 
 
-// CREATE IN completepayment
-// router.post("/", (req, res) => {
-//   const bill = req.body.bill;
-//   const pNumber = req.body.pNumber;
+//CREATE
+router.post("/completepayment", (req, res) => {
+  const bill = req.body.bill;
+  const pNumber = req.body.pNumber;
 
-//   const newTodo = { bill, pNumber};
+  const newTodo = { bill, pNumber };
 
-//   console.log(newTodo.bill)
-//   const sql = "INSERT INTO completepayment (bill, pNumber) VALUES (?, ?)";
-//   db.query(sql, [bill, pNumber], (err, result) => {
-//     if (err) {
-//       throw err;
-//     }
-//     newTodo.id = result.insertId;
-//     res.json(newTodo);
-//   });
-// });
+  console.log(newTodo.title)
+  const sql = "INSERT INTO completepayment (bill, pNumber) VALUES (?, ?)";
+  db.query(sql, [bill, pNumber], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    newTodo.id = result.insertId;
+    res.json(newTodo);
+  });
+});
+
+
 
 
 // UPDATE

@@ -10,6 +10,7 @@
             type="text"
             id="name"
             required
+            
         />
       </div>
       <div class="form-group">
@@ -19,6 +20,7 @@
             type="email"
             id="email"
             required
+            
         />
       </div>
       <div class="form-group">
@@ -100,28 +102,25 @@ label {
   color: black;
 }
 
-input{
+
+input {
   border: solid 1px #555555;
   background-color: #43B02A;
 }
 
-#dob{
+#dob {
   width: 100%;
 }
 
 .signup-button {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+  margin-bottom: 40px;
+  background-color: yellow;
+  border: solid 1px;
+  margin-top: 4px;
+  /* margin-top: 10px; */
+  width: 100px;
+  margin-left: 50px;
+  border-radius: 10px;
 }
 
-.signup-button:hover {
-  background-color: #444;
-}
 </style>

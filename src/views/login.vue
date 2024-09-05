@@ -85,23 +85,14 @@ input {
 }
 
 .login-button {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  /* background-color: black; */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
   background-color: yellow;
-  margin-top: 10px;
+  margin-top: 4px;
   width: 100px;
-  margin-left: 100px;
+  margin-left: 48px;
   border-radius: 10px;
+  border: solid 1px;
+
 }
 
-.login-button:hover {
-  background-color: #444;
-}
+
 </style>

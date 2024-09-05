@@ -31,7 +31,8 @@ onMounted(async () => {
 </script>
 
 
-<template>
+<template >
+  <div id="whole">
   <div class="flex flex-col min-h-screen">
   <section class="bg-customGreen px-4 py-10">
     <div class="container-xl lg:container m-auto">
@@ -46,7 +47,7 @@ onMounted(async () => {
 
       <!-- Shoe job listing when done loading -->
       <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <JobListing
+        <JobListing 
           v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
           :key="job.id"
           :job="job"
@@ -55,6 +56,7 @@ onMounted(async () => {
     </div>
   </section>
 
+  
   <section v-if="showButton" class="m-auto max-w-lg my-10 px-6">
     <RouterLink
       to="/jobs"
@@ -62,4 +64,13 @@ onMounted(async () => {
       >Get Started</RouterLink>
   </section>
   </div>
+</div>
 </template>
+
+<style scoped>
+#whole{
+  background-color: #43B02A;
+  height: 100vh;
+  ;
+}
+</style>
