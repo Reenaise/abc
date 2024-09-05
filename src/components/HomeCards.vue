@@ -23,7 +23,7 @@ outline of their  money.
           
           </div>
       <div>
-  <section v-if="showButton" class="m-auto max-w-lg my-10 px-6 bg-customGreen">
+  <!-- <section v-if="showButton" class="m-auto max-w-lg my-10 px-6 bg-customGreen"> -->
         
           <!-- <RouterLink
             to="/jobs"
@@ -31,16 +31,16 @@ outline of their  money.
           >
             Get started
           </RouterLink> -->
-          </section>
+          <!-- </section> -->
           </div>
         </Card>
         <Card bg="bg-customGreen"class="h-96 flex flex-col justify-between">
-          <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/">
+          <!-- <RouterLink class="flex flex-shrink-0 items-center mr-4" to="/"> -->
             <img class="h-full w-auto" :src="image" alt="Vue Jobs" />
             <!-- <span class="hidden md:block text-white text-2xl font-bold ml-2"
               >Vue Jobs</span -->
             
-          </RouterLink>
+          <!-- </RouterLink> -->
           <!-- <h2 class="text-2xl font-bold">For Employers</h2>
           <p class="mt-2 mb-4">
             List your job to find the perfect developer for the role
@@ -58,11 +58,11 @@ outline of their  money.
 </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      showButton: true, // Define the property here
-    };
-  },
-};
+// export default {
+//   data() {
+//     return {
+//       showButton: false, // Define the property here
+//     };
+//   },
+// };
 </script>

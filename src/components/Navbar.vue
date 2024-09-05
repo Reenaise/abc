@@ -34,6 +34,7 @@ const isActiveLink = (routePath) => {
                   'px-3',
                   'py-2',
                   'rounded-md',
+                  'text-decoration-none'
                 ]"
                 >Home</RouterLink
               >
@@ -86,6 +87,7 @@ const isActiveLink = (routePath) => {
                   'px-3',
                   'py-2',
                   'rounded-md',
+                  'text-decoration-none'
                 ]"
                 >completePayments</RouterLink
               >
@@ -103,6 +105,7 @@ const isActiveLink = (routePath) => {
                   'px-3',
                   'py-2',
                   'rounded-md',
+                  'text-decoration-none'
                 ]"
                 >Login</RouterLink
               >
@@ -116,6 +119,7 @@ const isActiveLink = (routePath) => {
                   'px-3',
                   'py-2',
                   'rounded-md',
+                  'text-decoration-none'
                 ]"
                 >Sign Up</RouterLink
               >
