@@ -6,7 +6,6 @@ import JobView from '@/views/JobView.vue';
 import AddJobView from '@/views/AddJobView.vue';
 import EditJobView from '@/views/EditJobView.vue';
 import login from "@/views/login.vue";
-import register from "@/views/register.vue";
 import PaymentsView from '@/views/PaymentsView.vue';
 import CompletePaymentsView from '@/views/CompletePaymentsView.vue';
 import Register from "@/views/register.vue";
