@@ -31,40 +31,20 @@
   
 </template>
 
-<script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-const email = ref('');
-const password = ref('');
-const errorMessage = ref(''); // Holds error messages
-const router = useRouter();
-
-async function submitLogin() {
-  try {
-    const response = await fetch('http://localhost:5001/servers/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email.value,
-        password: password.value,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (response.ok && data.success) {
-      // If login is successful, redirect to the home page
-      router.push('/');
-    } else {
-      // Set error message for invalid credentials
-      errorMessage.value = data.error || 'Invalid email or password';
+<script>
+export default {
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
+  },
+  methods: {
+    submitLogin() {
+      // Handle login logic here
+      console.log("Email:", this.email);
+      console.log("Password:", this.password);
     }
-  } catch (error) {
-    // Handle any errors during the request
-    errorMessage.value = 'An error occurred. Please try again later.';
   }
 }
 </script>
