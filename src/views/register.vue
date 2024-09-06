@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -52,12 +54,19 @@ export default {
     };
   },
   methods: {
-    submitSignup() {
-      // Handle signup logic here
-      console.log("Name:", this.name);
-      console.log("Email:", this.email);
-      console.log("Password:", this.password);
-      console.log("Date of Birth:", this.dob);
+    async submitSignup() {
+      try {
+        const response = await axios.post('http://localhost:8000/api/register/', {
+          name: this.name,
+          email: this.email,
+          password: this.password
+        });
+        console.log(response.data);
+        alert("Registration successful!");
+      } catch (error) {
+        console.error(error);
+        alert("Registration failed: " + error.response.data.error);
+      }
     }
   }
 };

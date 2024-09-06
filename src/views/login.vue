@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -36,10 +38,20 @@ export default {
     };
   },
   methods: {
-    submitLogin() {
-      // Handle login logic here
-      console.log("Email:", this.email);
-      console.log("Password:", this.password);
+    async submitLogin() {
+      try {
+        const response = await axios.post('http://localhost:8000/api/login/', {
+          email: this.email,
+          password: this.password
+        });
+        const token = response.data.access;
+        localStorage.setItem('token', token);  // Store the JWT token in localStorage
+        alert("Login successful!");
+        // Redirect or perform any further action
+      } catch (error) {
+        console.error(error);
+        alert("Login failed: " + error.response.data.detail);
+      }
     }
   }
 };
