@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="app">
     <BalanceSummary />
     <!--    <MainDashboard />-->
@@ -28,4 +28,4 @@ body {
   justify-content: space-around;
   padding: 20px;
 }
-</style>
+</style> -->

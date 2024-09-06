@@ -91,6 +91,20 @@ const isActiveLink = (routePath) => {
                 ]"
                 >completePayments</RouterLink
               >
+              <RouterLink
+                to="/summary"
+                :class="[
+                  isActiveLink('/summary')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-white',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                  'text-decoration-none'
+                ]"
+                >Summary</RouterLink
+              >
             </div>
           </div>
           <div class>

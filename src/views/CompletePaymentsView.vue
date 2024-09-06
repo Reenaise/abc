@@ -36,17 +36,22 @@ import { ref } from 'vue';
 
 const name = ref('');
 const phoneNumber = ref('');
+const mobilePayment = ref('');
 
 async function submitPayment() {
   try {
-    const response = await fetch('http://localhost:5001/servers', {
+    const response = await fetch('http://localhost:5001/servers/completePayment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ bill: name.value, pNumber: phoneNumber.value })
+      body: JSON.stringify({ bill: name.value, pNumber: phoneNumber.value, mPayment: mobilePayment.value })
     });
     const data = await response.json();
+    alert("Data has been submitted");
+    name.value = "";
+    phoneNumber.value = "";
+    mobilePayment.value = "";
     console.log('Payment data stored:', data);
   } catch (error) {
     console.error('Error storing payment data:', error);

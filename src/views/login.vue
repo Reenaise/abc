@@ -2,47 +2,71 @@
   <div class="login-container">
     <h2>Login</h2>
     <p>Sign in to continue</p>
+    
+    <!-- Display error message if there's any -->
+    
     <form @submit.prevent="submitLogin">
       <div class="form-group">
         <label for="email">Email</label>
         <input
-            v-model="email"
-            type="email"
-            id="email"
-            required
+          v-model="email"
+          type="email"
+          id="email"
+          required
         />
       </div>
       <div class="form-group">
         <label for="password">Password</label>
         <input
-            v-model="password"
-            type="password"
-            id="password"
-            required
-
+          v-model="password"
+          type="password"
+          id="password"
+          required
         />
       </div>
       <button type="submit" class="login-button">Login</button>
+      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </form>
   </div>
+  
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      email: '',
-      password: ''
-    };
-  },
-  methods: {
-    submitLogin() {
-      // Handle login logic here
-      console.log("Email:", this.email);
-      console.log("Password:", this.password);
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const email = ref('');
+const password = ref('');
+const errorMessage = ref(''); // Holds error messages
+const router = useRouter();
+
+async function submitLogin() {
+  try {
+    const response = await fetch('http://localhost:5001/servers/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email.value,
+        password: password.value,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok && data.success) {
+      // If login is successful, redirect to the home page
+      router.push('/');
+    } else {
+      // Set error message for invalid credentials
+      errorMessage.value = data.error || 'Invalid email or password';
     }
+  } catch (error) {
+    // Handle any errors during the request
+    errorMessage.value = 'An error occurred. Please try again later.';
   }
-};
+}
 </script>
 
 <style scoped>
@@ -65,6 +89,11 @@ h2 {
 p {
   margin-bottom: 20px;
   color: black;
+}
+
+.error-message {
+  color: yellow; /* Style the error message */
+  margin-top: 20px;
 }
 
 .form-group {
@@ -91,8 +120,5 @@ input {
   margin-left: 48px;
   border-radius: 10px;
   border: solid 1px;
-
 }
-
-
 </style>

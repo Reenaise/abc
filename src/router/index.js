@@ -9,6 +9,7 @@ import login from "@/views/login.vue";
 import PaymentsView from '@/views/PaymentsView.vue';
 import CompletePaymentsView from '@/views/CompletePaymentsView.vue';
 import Register from "@/views/register.vue";
+import BalanceSummaryView from '@/views/BalanceSummaryView.vue';
 
 
 
@@ -50,6 +51,11 @@ const router = createRouter({
       path: '/completePayments',
       name: 'completePayments',
       component: CompletePaymentsView,
+    },
+    {
+      path: '/summary',
+      name: 'summary',
+      component: BalanceSummaryView,
     },
   //     {
   //   path: '/completePayments',

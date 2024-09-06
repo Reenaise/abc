@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   data() {
     return {
@@ -61,6 +61,36 @@ export default {
     }
   }
 };
+</script> -->
+
+<script setup>
+import { ref } from 'vue';
+
+const name = ref('');
+const email = ref('');
+const password = ref('');
+const dob = ref('');
+
+async function submitSignup() {
+  try {
+    const response = await fetch('http://localhost:5001/servers/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name: name.value, email: email.value, password: password.value, dob: dob.value })
+    });
+    const data = await response.json();
+    alert("Data has been submitted");
+    name.value = "";
+    email.value = "";
+    password.value = "";
+    dob.value = "";
+    console.log('Registration data stored:', data);
+  } catch (error) {
+    console.error('Error storing registration data:', error);
+  }
+}
 </script>
 
 <style scoped>

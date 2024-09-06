@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("../config/db");
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 
 // READ
@@ -85,17 +86,121 @@ router.post("/payments", (req, res) => {
   });
 });
 
+//CREATE
+// Registration route (assuming you already have a User model)
+// router.post('/user', async (req, res) => {
+//   const { username, email, password, dob } = req.body;
+
+//   // Basic validation
+//   if (!username || !email || !password || !dob ) {
+//     return res.status(400).json({   
+//  msg: 'Please enter all fields'   
+//  });
+//   }
+
+//   try {
+//     // Check if the user already exists (using prepared statement)
+//     const [existingUser] = await pool.query('SELECT * FROM users WHERE email = ?', [email]);
+//     if (existingUser.length > 0) {
+//       return res.status(400).json({   
+//  msg: 'User already exists' });
+//     }
+
+//     // Hash the password using bcrypt (replace with actual hashing logic)
+//     const hashedPassword = await bcrypt.hash(password, 10);
+
+//     // Create a new user
+//     const newUser = new User({
+//       username,
+//       email,
+//       password: hashedPassword,
+//     });
+
+//     // Save the user to the database
+//     await newUser.save();
+
+//     res.json({   
+//  msg: 'User registered successfully' });
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).send('Server error');
+//   }
+// });
+
+router.post('/user', async (req, res) => {
+  try {
+    const { name, email, password, dob } = req.body;
+
+    // Validate the required fields
+    if (!name || !email || !password || !dob) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    // Hash the password before storing it
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = { name, email, password: hashedPassword, dob };
+
+    const sql = "INSERT INTO user (name, email, password, dob) VALUES (?, ?, ?, ?)";
+    db.query(sql, [name, email, hashedPassword, dob], (err, result) => {
+      if (err) {
+        return res.status(500).json({ error: "Database error", details: err });
+      }
+
+      newUser.id = result.insertId; // Store the newly created user ID
+      res.status(201).json(newUser);
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+router.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  // Check if both fields are provided
+  if (!email || !password) {
+    return res.status(400).json({ error: "Both email and password are required" });
+  }
+
+  // Query the database to find a user with the given email
+  const sql = "SELECT * FROM user WHERE email = ?";
+  db.query(sql, [email], async (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: "Database error", details: err });
+    }
+
+    // If no user is found
+    if (results.length === 0) {
+      return res.status(400).json({ error: "Invalid email or password" });
+    }
+
+    const user = results[0];
+
+    // Compare the provided password with the hashed password in the database
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordMatch) {
+      return res.status(400).json({ error: "Invalid email or password" });
+    }
+
+    // If the email and password match, return a success message or token (if using JWT for example)
+    res.json({ success: true, message: "Login successful", user: { id: user.id, name: user.name, email: user.email } });
+  });
+});
 
 //CREATE
 router.post("/completepayment", (req, res) => {
   const bill = req.body.bill;
   const pNumber = req.body.pNumber;
+  const mPayment = req.body.mPayment;
 
-  const newTodo = { bill, pNumber };
+  const newTodo = { bill, pNumber, mPayment };
 
   console.log(newTodo.title)
-  const sql = "INSERT INTO completepayment (bill, pNumber) VALUES (?, ?)";
-  db.query(sql, [bill, pNumber], (err, result) => {
+  const sql = "INSERT INTO completepayment (bill, pNumber, mPayment) VALUES (?, ?, ?)";
+  db.query(sql, [bill, pNumber, mPayment], (err, result) => {
     if (err) {
       throw err;
     }
