@@ -1,4 +1,3 @@
-
 <template>
   <div class="cBody">
     <div class="cContainer">
@@ -18,7 +17,7 @@
           </div>
 
           <div class="field3">
-            <label for="mPayment" id="mPayment">Mobile payment:</label> 
+            <label for="mPayment" id="mPayment">Mobile payment:</label>
             <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required />
           </div>
 
@@ -43,21 +42,31 @@ async function submitPayment() {
     const response = await fetch('http://localhost:5001/servers/completePayment', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ bill: name.value, pNumber: phoneNumber.value, mPayment: mobilePayment.value })
+      body: JSON.stringify({
+        bill: name.value,
+        pNumber: phoneNumber.value,
+        mPayment: mobilePayment.value,
+      }),
     });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
     const data = await response.json();
-    alert("Data has been submitted");
-    name.value = "";
-    phoneNumber.value = "";
-    mobilePayment.value = "";
+    alert('Data has been submitted');
+    name.value = '';
+    phoneNumber.value = '';
+    mobilePayment.value = '';
     console.log('Payment data stored:', data);
   } catch (error) {
     console.error('Error storing payment data:', error);
   }
 }
 </script>
+
 
 <style scoped>
 /* .cBody {

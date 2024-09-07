@@ -105,6 +105,21 @@ const isActiveLink = (routePath) => {
                 ]"
                 >Summary</RouterLink
               >
+
+              <RouterLink
+                to="/Reports"
+                :class="[
+                  isActiveLink('/Reports')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-white',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                  'text-decoration-none'
+                ]"
+                >reports</RouterLink
+              >
             </div>
           </div>
           <div class>

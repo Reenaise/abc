@@ -16,18 +16,18 @@ router.get("/", (req, res) => {
 });
 
 // READ
-router.get("/:id", (req, res) => {
-  const id = req.params.id;
+// router.get("/:id", (req, res) => {
+//   const id = req.params.id;
 
-  const sql = `SELECT * FROM books WHERE id = ${id}`;
+//   const sql = `SELECT * FROM books WHERE id = ${id}`;
 
-  db.query(sql, (err, result) => {
-    if (err) {
-      throw err;
-    }
-    res.json(result[0]);
-  });
-});
+//   db.query(sql, (err, result) => {
+//     if (err) {
+//       throw err;
+//     }
+//     res.json(result[0]);
+//   });
+// });
 
 
 // CREATE
@@ -191,7 +191,7 @@ router.post("/login", (req, res) => {
 });
 
 //CREATE
-router.post("/completepayment", (req, res) => {
+router.post("/completePayment", (req, res) => {
   const bill = req.body.bill;
   const pNumber = req.body.pNumber;
   const mPayment = req.body.mPayment;
@@ -210,6 +210,18 @@ router.post("/completepayment", (req, res) => {
 });
 
 
+// GET route to fetch data from the payment table
+router.get('/getpayment', (req, res) => {
+  const sql = "SELECT * FROM completepayment";
+  
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error fetching data:', err);
+      return res.status(500).json({ error: 'An error occurred while fetching data' });
+    }
+    res.json(results);
+  });
+});
 
 
 // UPDATE
