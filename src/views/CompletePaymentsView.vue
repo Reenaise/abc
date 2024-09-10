@@ -7,18 +7,47 @@
       <div class="cForm">
         <form @submit.prevent="submitPayment">
           <div class="field1">
-            <label for="bill" id="bill">Name of the bill:</label>
-            <input v-model="name" type="text" id="bill" class="inputBill" required />
+            <label for="bill" id="bill">Ulicho lipia:</label>
+            <select v-model="name" type="text" id="bill" class="inputBill" required >
+      <option value="" disabled>Chagua jina la ulicho lipia</option>
+      <option value="maji">Maji</option>
+      <option value="umeme">Umeme</option>
+      <option value="kodi">Kodi</option>
+      <option value="vifaa">Vifaa</option>
+      <option value="vinginevyo">Vinginevyo</option>
+    </select>
           </div>
 
           <div class="field2">
-            <label for="pNumber" id="pNumber">Phone number:</label>
+            <label for="pNumber" id="pNumber">Namba ya simu:</label>
             <input v-model="phoneNumber" type="number" id="pNumber" class="inputNumber" required />
+            
           </div>
 
           <div class="field3">
-            <label for="mPayment" id="mPayment">Mobile payment:</label>
-            <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required />
+            <label for="mPayment" id="mPayment">Mtandao:</label>
+            <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
+            <select v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required >
+      <option value="" disabled>Ingiza mtandao wa simu</option>
+      <option value="m-pesa">m-pesa</option>
+      <option value="Tigopesa">Tigopesa</option>
+      <option value="Halopesa">Halopesa</option>
+      <option value="airtelmoney">airtelmoney</option>
+      <option value="Mitandao mingine">Mitandao mingine</option>
+    </select>
+          </div>
+
+          <div class="field4">
+            <label for="amount" id="amount">Kiasi:</label>
+            <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
+            <select v-model="amount" type="text" id="amount" class="amount" required >
+      <option value="" disabled>Ingiza kiasi</option>
+      <option value="10000">10000</option>
+      <option value="20000">20000</option>
+      <option value="30000">30000</option>
+      <option value="40000">40000</option>
+      <option value="nje">Kiasi nje ya hivi</option>
+    </select>
           </div>
 
           <div class="button1">
@@ -103,14 +132,16 @@ h1 {
 
 .field1,
 .field2,
-.field3 {
+.field3,
+.field4 {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
 
 .field2,
-.field3 {
+.field3,
+.field4 {
   margin-top: 10px;
 }
 
@@ -136,13 +167,15 @@ input{
 
 #bill,
 #pNumber,
-#mPayment {
+#mPayment,
+#amount {
   font-weight: 500;
 }
 
 .inputBill,
 .inputNumber,
-.inputNumber {
+.inputPayment,
+.amount {
   border: solid 1px #555555;
   background-color: #43B02A;
 }
