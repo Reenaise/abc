@@ -129,20 +129,20 @@ router.post("/payments", (req, res) => {
 
 router.post('/user', async (req, res) => {
   try {
-    const { name, email, password, dob } = req.body;
+    const { name, email, password, dob, incomeRange } = req.body;
 
     // Validate the required fields
-    if (!name || !email || !password || !dob) {
+    if (!name || !email || !password || !dob || !incomeRange) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
     // Hash the password before storing it
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = { name, email, password: hashedPassword, dob };
+    const newUser = { name, email, password: hashedPassword, dob, incomeRange };
 
-    const sql = "INSERT INTO user (name, email, password, dob) VALUES (?, ?, ?, ?)";
-    db.query(sql, [name, email, hashedPassword, dob], (err, result) => {
+    const sql = "INSERT INTO user (name, email, password, dob, incomeRange) VALUES (?, ?, ?, ?, ?)";
+    db.query(sql, [name, email, hashedPassword, dob, incomeRange], (err, result) => {
       if (err) {
         return res.status(500).json({ error: "Database error", details: err });
       }
@@ -191,17 +191,39 @@ router.post("/login", (req, res) => {
 });
 
 //CREATE
-router.post("/completePayment", (req, res) => {
+router.post("/expenses", (req, res) => {
   const bill = req.body.bill;
   const pNumber = req.body.pNumber;
   const mPayment = req.body.mPayment;
   const amount = req.body.amount;
+  const dob = req.body.date;
+  const reference = req.body.reference;
 
-  const newTodo = { bill, pNumber, mPayment, amount };
+  const newTodo = { bill, pNumber, mPayment, amount, dob, reference };
 
   console.log(newTodo.title)
-  const sql = "INSERT INTO completepayment (bill, pNumber, mPayment, amount) VALUES (?, ?, ?, ?)";
-  db.query(sql, [bill, pNumber, mPayment, amount], (err, result) => {
+  const sql = "INSERT INTO expenses (bill, pNumber, mPayment, amount, date, reference) VALUES (?, ?, ?, ?, ?, ?)";
+  db.query(sql, [bill, pNumber, mPayment, amount, dob, reference], (err, result) => {
+    if (err) {
+      throw err;
+    }
+    newTodo.id = result.insertId;
+    res.json(newTodo);
+  });
+});
+
+router.post("/income", (req, res) => {
+  const pNumber = req.body.pNumber;
+  const mPayment = req.body.mPayment;
+  const amount = req.body.amount;
+  const dob = req.body.date;
+  const reference = req.body.reference;
+
+  const newTodo = { pNumber, mPayment, amount, dob, reference };
+
+  console.log(newTodo.title)
+  const sql = "INSERT INTO income (pNumber, mPayment, amount, date, reference) VALUES (?, ?, ?, ?, ?)";
+  db.query(sql, [pNumber, mPayment, amount, dob, reference], (err, result) => {
     if (err) {
       throw err;
     }
@@ -213,7 +235,7 @@ router.post("/completePayment", (req, res) => {
 
 // GET route to fetch data from the payment table
 router.get('/getpayment', (req, res) => {
-  const sql = "SELECT * FROM completepayment";
+  const sql = "SELECT * FROM expenses";
   
   db.query(sql, (err, results) => {
     if (err) {
@@ -223,6 +245,19 @@ router.get('/getpayment', (req, res) => {
     res.json(results);
   });
 });
+
+router.get('/getincome', (req, res) => {
+  const sql = "SELECT * FROM income";
+  
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error fetching data:', err);
+      return res.status(500).json({ error: 'An error occurred while fetching data' });
+    }
+    res.json(results);
+  });
+});
+
 
 
 // UPDATE

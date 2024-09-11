@@ -7,10 +7,13 @@ import AddJobView from '@/views/AddJobView.vue';
 import EditJobView from '@/views/EditJobView.vue';
 import login from "@/views/login.vue";
 import PaymentsView from '@/views/PaymentsView.vue';
-import CompletePaymentsView from '@/views/CompletePaymentsView.vue';
 import Register from "@/views/register.vue";
-import BalanceSummaryView from '@/views/BalanceSummaryView.vue';
-import ReportsView from '@/views/Reports.vue';
+import BalanceSummaryView from '@/views/Report.vue';
+import ExpenseSummary from '@/views/ExpenseSummary.vue';
+import HomeView2 from '@/views/HomeView2.vue';
+import IncomeSummary from '@/views/IncomeSummary.vue';
+import Expenses from '@/views/Expenses.vue';
+import Income from '@/views/Income.vue';
 
 
 
@@ -22,6 +25,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/home2',
+      name: 'home2',
+      component: HomeView2,
     },
     {
       path: '/jobs',
@@ -50,19 +58,31 @@ const router = createRouter({
     },
 
     {
-      path: '/completePayments',
-      name: 'completePayments',
-      component: CompletePaymentsView,
+      path: '/expenses',
+      name: 'expenses',
+      component: Expenses,
     },
+
+    {
+      path: '/income',
+      name: 'income',
+      component: Income,
+    },
+
     {
       path: '/summary',
       name: 'summary',
       component: BalanceSummaryView,
     },
     {
-      path: '/Reports',
-      name: 'Reports',
-      component: ReportsView ,
+      path: '/ExpenseSummary',
+      name: 'ExpenseSummary',
+      component: ExpenseSummary ,
+    },
+    {
+      path: '/IncomeSummary',
+      name: 'IncomeSummary',
+      component: IncomeSummary ,
     },
   //     {
   //   path: '/completePayments',

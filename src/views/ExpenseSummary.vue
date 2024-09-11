@@ -1,6 +1,8 @@
 <template>
+<Navbar2 />
+
   <div class="report-container">
-    <h1>Report Data</h1>
+    <h1>Matumizi</h1>
   
     
     <!-- Data Table -->
@@ -8,17 +10,19 @@
       <thead>
         <tr>
           <th>Bill</th>
-          <th>pNumber</th>
-          <th>mPayment</th>
+          <th>Namba</th>
+          <th>Mtandao</th>
           <th>Kiasi</th>
+          <th>Tarehe</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="completepayment in completepayments" :key="completepayment.bill">
-          <td>{{ completepayment.bill }}</td>
-          <td>{{ completepayment.pNumber }}</td>
-          <td>{{ completepayment.mPayment }}</td>
-          <td>{{ completepayment.amount }}</td>
+        <tr v-for="expense in expenses" :key="expense.bill">
+          <td>{{ expense.bill }}</td>
+          <td>{{ expense.pNumber }}</td>
+          <td>{{ expense.mPayment }}</td>
+          <td>{{ expense.amount }}</td>
+          <td>{{ expense.date }}</td>
         </tr>
       </tbody>
     </table>
@@ -29,9 +33,11 @@
 
 
 <script setup>
+import Navbar2 from '@/components/Navbar2.vue';
 import { ref, onMounted, computed } from 'vue';
 
-const completepayments = ref([]);
+
+const expenses = ref([]);
 const searchQuery = ref('');
 
 onMounted(async () => {
@@ -41,7 +47,7 @@ onMounted(async () => {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    completepayments.value = data;
+    expenses.value = data;
   } catch (error) {
     console.error('Error fetching report data:', error);
   }
@@ -64,7 +70,7 @@ h1{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #43B02A;  
+  /* background-color: #43B02A;   */
   font-weight: 500;
   /* margin: 20px; */
   /* font-family: Arial, sans-serif; */

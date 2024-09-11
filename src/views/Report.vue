@@ -37,6 +37,8 @@
   </template> -->
 
   <template>
+  <Navbar2 />
+
     <div class="container">
       <div class="balance-summary">
         <div class="balance-card">
@@ -92,6 +94,9 @@
   </script> -->
   
   <script>
+  import Navbar2 from '@/components/Navbar2.vue';
+
+
 export default {
   name: 'BalanceSummary',
   data() {
@@ -133,6 +138,7 @@ export default {
     }
   }
 };
+
 </script>
 
   <style scoped>

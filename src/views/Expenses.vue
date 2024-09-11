@@ -1,4 +1,6 @@
 <template>
+<Navbar2 />
+
   <div class="cBody">
     <div class="cContainer">
       <h1>PAYMENTS</h1>
@@ -65,13 +67,22 @@
               class="amount"
               required
             />
-            <!-- <select v-model="amount" type="text" id="amount" class="amount" required >
-      <option value="" disabled>Ingiza kiasi</option>
-      <option value="10000">10000</option>
-      <option value="20000">20000</option>
-      <option value="30000">30000</option>
-      <option value="40000">40000</option>
-    </select> -->
+          </div>
+
+          <div class="field4">
+            <label for="dob" id="dob">Tarehe:</label>
+            <input v-model="dob" type="date" id="dob" />
+          </div>
+
+          <div class="field4">
+            <label for="reference" id="reference">Utambulisho wa Muamala:</label>
+            <input
+              v-model="reference"
+              type="text"
+              id="reference"
+              class="reference"
+              required
+            />
           </div>
 
           <div class="button1">
@@ -84,17 +95,20 @@
 </template>
 
 <script setup>
+import Navbar2 from '@/components/Navbar2.vue';
 import { ref } from "vue";
 
 const name = ref("");
 const phoneNumber = ref("");
 const mobilePayment = ref("");
 const amount = ref("");
+const dob = ref("");
+const reference = ref("");
 
 async function submitPayment() {
   try {
     const response = await fetch(
-      "http://localhost:5001/servers/completePayment",
+      "http://localhost:5001/servers/expenses",
       {
         method: "POST",
         headers: {
@@ -105,6 +119,8 @@ async function submitPayment() {
           pNumber: phoneNumber.value,
           mPayment: mobilePayment.value,
           amount: amount.value,
+          date: dob.value,
+          reference: reference.value,
         }),
       }
     );
@@ -119,6 +135,8 @@ async function submitPayment() {
     phoneNumber.value = "";
     mobilePayment.value = "";
     amount.value = "";
+    dob.value = "";
+    reference.value = "";
     console.log("Payment data stored:", data);
   } catch (error) {
     console.error("Error storing payment data:", error);
@@ -138,18 +156,18 @@ async function submitPayment() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #43b02a;
+  /* background-color: #43b02a; */
 }
 
 h1 {
   margin-top: 15vh;
   margin-bottom: 2vh;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
-#pFirst {
+/* #pFirst {
   font-weight: 500;
-}
+} */
 
 .cForm {
   display: flex;
@@ -176,7 +194,7 @@ h1 {
 
 input {
   border: solid 1px #555555;
-  background-color: #43b02a;
+  /* background-color: #43b02a; */
 }
 
 .button1 {
@@ -193,19 +211,19 @@ input {
   border: solid 1px;
 }
 
-#bill,
+/* #bill,
 #pNumber,
 #mPayment,
 #amount {
   font-weight: 500;
-}
+} */
 
 .inputBill,
 .inputNumber,
 .inputPayment,
 .amount {
   border: solid 1px #555555;
-  background-color: #43b02a;
+  /* background-color: #43b02a; */
 }
 
 #button {

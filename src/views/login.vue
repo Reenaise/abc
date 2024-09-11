@@ -1,4 +1,5 @@
 <template>
+  <Navbar/>
   <div class="login-container">
     <h2>Ingia</h2>
     <p>Je, tayari una akaunti? <router-link to="/register" class="link">Sajili</router-link></p>
@@ -32,6 +33,7 @@
 </template>
 
 <script setup>
+import Navbar from '@/components/Navbar.vue';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -57,7 +59,7 @@ async function submitLogin() {
 
     if (response.ok && data.success) {
       // If login is successful, redirect to the home page
-      router.push('/');
+      router.push('/home2');
     } else {
       // Set error message for invalid credentials
       errorMessage.value = data.error || 'Invalid email or password';
@@ -77,7 +79,7 @@ async function submitLogin() {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #43B02A;
+  /* background-color: #43B02A; */
   font-family: Arial, sans-serif;
 }
 
@@ -85,12 +87,12 @@ h2 {
   /* margin-top: 10px; */
   font-size: 2rem;
   margin-bottom: 10px;
-  color: black;
+  /* color: black; */
 }
 
 p {
   margin-bottom: 20px;
-  color: black;
+  /* color: black; */
   
 }
 
@@ -100,7 +102,7 @@ p {
 }
 
 .error-message {
-  color: yellow; /* Style the error message */
+  color: red; /* Style the error message */
   margin-top: 20px;
 }
 
@@ -113,12 +115,12 @@ p {
 label {
   display: block;
   margin-bottom: 5px;
-  color: black;
+  /* color: black; */
 }
 
 input {
   border: solid 1px #555555;
-  background-color: #43B02A;
+  /* background-color: #43B02A; */
 }
 
 .login-button {

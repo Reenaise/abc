@@ -25,9 +25,9 @@ const isActiveLink = (routePath) => {
           <div class="flex flex-1 items-center justify-center justify-start">
             <div class="flex space-x-2">
               <RouterLink
-                to="/"
+                to="/home2"
                 :class="[
-                  isActiveLink('/')
+                  isActiveLink('/home2')
                     ? 'bg-green-900'
                     : 'hover:bg-gray-900 hover:text-white',
                   'text-green',
@@ -38,20 +38,6 @@ const isActiveLink = (routePath) => {
                 ]"
                 >Nyumbani</RouterLink
               >
-              <!-- <RouterLink
-                to="/home2"
-                :class="[
-                  isActiveLink('/home2')
-                    ? 'bg-green-900'
-                    : 'hover:bg-gray-900 hover:text-white',
-                  'text-white',
-                  'px-3',
-                  'py-2',
-                  'rounded-md',
-                  'text-decoration-none'
-                ]"
-                >Home</RouterLink
-              > -->
               <!-- <RouterLink
                 to="/jobs"
                 :class="[
@@ -91,21 +77,35 @@ const isActiveLink = (routePath) => {
                 ]"
                 >payments</RouterLink
               > -->
-              <!-- <RouterLink
-                to="/completePayments"
+              <RouterLink
+                to="/expenses"
                 :class="[
-                  isActiveLink('/completePayments')
+                  isActiveLink('/expenses')
                     ? 'bg-green-900'
                     : 'hover:bg-gray-900 hover:text-white',
-                  'text-white',
+                  'text-green',
                   'px-3',
                   'py-2',
                   'rounded-md',
                   'text-decoration-none'
                 ]"
-                >completePayments</RouterLink
+                >Matumizi</RouterLink
               >
               <RouterLink
+                to="/income"
+                :class="[
+                  isActiveLink('/income')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-green',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                  'text-decoration-none'
+                ]"
+                >Mapato</RouterLink
+              >
+              <!-- <RouterLink
                 to="/summary"
                 :class="[
                   isActiveLink('/summary')
@@ -118,12 +118,59 @@ const isActiveLink = (routePath) => {
                   'text-decoration-none'
                 ]"
                 >Summary</RouterLink
+              > -->
+
+              <RouterLink
+                to="/ExpenseSummary"
+                :class="[
+                  isActiveLink('/ExpenseSummary')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-green',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                  'text-decoration-none'
+                ]"
+                >RipotiYaMatumizi</RouterLink
               >
 
               <RouterLink
-                to="/Reports"
+                to="/IncomeSummary"
                 :class="[
-                  isActiveLink('/Reports')
+                  isActiveLink('/IncomeSummary')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-green',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                  'text-decoration-none'
+                ]"
+                >RipotiYaMapato</RouterLink
+              >
+            </div>
+          </div>
+          <div class>
+            <div class="flex space-x-2">
+              <RouterLink
+                to="/"
+                :class="[
+                  isActiveLink('/logout')
+                    ? 'bg-green-900'
+                    : 'hover:bg-gray-900 hover:text-white',
+                  'text-green',
+                  'px-3',
+                  'py-2',
+                  'rounded-md',
+                  'text-decoration-none'
+                ]"
+                >Jiondoe</RouterLink
+              >
+              <!-- <RouterLink
+                to="/register"
+                :class="[
+                  isActiveLink('/register')
                     ? 'bg-green-900'
                     : 'hover:bg-gray-900 hover:text-white',
                   'text-white',
@@ -132,43 +179,8 @@ const isActiveLink = (routePath) => {
                   'rounded-md',
                   'text-decoration-none'
                 ]"
-                >reports</RouterLink
-              >
-            </div> -->
-            </div>
-          </div>
-          <div class>
-            <div class="flex space-x-2">
-              <RouterLink
-                to="/login"
-                :class="[
-                  isActiveLink('/login')
-                    ? 'bg-green-900'
-                    : 'hover:bg-gray-900 hover:text-white',
-                  'text-green',
-                  'bg-yellow',
-                  'px-3',
-                  'py-2',
-                  'rounded-md',
-                  'text-decoration-none'
-                ]"
-                >Ingia</RouterLink
-              >
-              <RouterLink
-                to="/register"
-                :class="[
-                  isActiveLink('/register')
-                    ? 'bg-green-900'
-                    : 'hover:bg-gray-900 hover:text-white',
-                  'text-green',
-                  'bg-yellow',
-                  'px-3',
-                  'py-2',
-                  'rounded-md',
-                  'text-decoration-none'
-                ]"
-                >Sajili</RouterLink
-              >
+                >Sign Up</RouterLink
+              > -->
               </div>
             </div>
 
@@ -177,10 +189,3 @@ const isActiveLink = (routePath) => {
     </div>
   </nav>
 </template>
-
-
-<style>
-.bg-yellow{
-  background-color: yellow;
-}
-</style>

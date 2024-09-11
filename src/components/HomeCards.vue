@@ -13,12 +13,10 @@ import image from '@/assets/img/image.png';
       <div class="grid grid-cols-1 md:grid-cols-2 h-full ">
         <Card bg="bg-customGreen" class="h-96 flex flex-col justify-between ">
           <div>
-          <h2 class="text-3xl font-extrabold sm:text-4xl mb-6 border-b border-white/60 pb-4">Empowering the self-employed by<br> easy tracking of  credit records.
+          <h2 class="text-3xl font-extrabold sm:text-4xl mb-6 border-b border-white/60 pb-4">Kuimarisha wajasiriamali kwa ufuatiliaji rahisi wa rekodi za mapato na matumizi.
           </h2>
           <p class="mt-7 mb-4 text-left ">
-            We help the formal self employed individuals to <br> have updates on their cash flow and business <br>
-expenses so that they have an organized<br>
-outline of their  money.
+            Tunawasaidia wajasiriamali walio rasmi kuwa na taarifa <br> kuhusu mapato na matumizi yao <br> ili wawe na muhtasari mzuriwa fedha zao
           </p>
           
           </div>
@@ -66,3 +64,15 @@ outline of their  money.
 //   },
 // };
 </script>
+
+
+<style>
+
+
+.bg-customGreen {
+  background-color: #F5F5F5 ; /* Path to your background iFFFFFFmage */
+  background-size: cover; /* Ensures the image covers the entire element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center center; /* Centers the image in the element */
+}
+</style>
