@@ -1,16 +1,7 @@
 <template>
   <div class="report-container">
     <h1>Report Data</h1>
-    
-    <!-- Search Bar -->
-    <div class="search-container">
-      <input 
-        v-model="searchQuery" 
-        type="text" 
-        placeholder="Search..." 
-        class="search-bar"
-      />
-    </div>
+  
     
     <!-- Data Table -->
     <table>
@@ -19,13 +10,15 @@
           <th>Bill</th>
           <th>pNumber</th>
           <th>mPayment</th>
+          <th>Kiasi</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="completepayment in filteredPayments" :key="completepayment.bill">
+        <tr v-for="completepayment in completepayments" :key="completepayment.bill">
           <td>{{ completepayment.bill }}</td>
           <td>{{ completepayment.pNumber }}</td>
           <td>{{ completepayment.mPayment }}</td>
+          <td>{{ completepayment.amount }}</td>
         </tr>
       </tbody>
     </table>
@@ -54,20 +47,6 @@ onMounted(async () => {
   }
 });
 
-// Computed property to filter payments based on the search query
-const filteredPayments = computed(() => {
-  if (!searchQuery.value.trim()) {
-    return completepayments.value;
-  }
-  const query = searchQuery.value.toLowerCase();
-  return completepayments.value.filter(payment => {
-    return (
-      payment.bill.toLowerCase().includes(query) ||
-      payment.pNumber.toString().includes(query) ||
-      payment.mPayment.toLowerCase().includes(query)
-    );
-  });
-});
 </script>
 
 

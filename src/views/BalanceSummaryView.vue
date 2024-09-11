@@ -1,17 +1,21 @@
-<template>
+<!-- <template>
   <div class="container">
     <div class="balance-summary">
       <div class="balance-card">
+        <div class="income-field">
+          <input type="text" name="income" id="income" placeholder="Add Income">
+          <button>Enter</button>
+        </div>
         <p>Your Balance</p>
-        <h1>$576,000.00</h1>
+        <h1>$0.00</h1>
         <div class="goals">
           <div class="goal blue">
-            <p>$5,000</p>
+            <p>$0.00</p>
             <span>Expense</span>
           </div>
           <div class="goal orange">
-            <p>$15,000</p>
-            <span>Spend to goal</span>
+            <p>$0.00</p>
+            <span>Income</span>
           </div>
         </div>
       </div>
@@ -25,14 +29,53 @@
               <span>{{ transaction.detail }}</span>
             </div>
             <p :class="transaction.amountClass">{{ transaction.amount }}</p>
-          </li>
+          </li>x
         </ul>
       </div>
     </div>
   </div>
+  </template> -->
+
+  <template>
+    <div class="container">
+      <div class="balance-summary">
+        <div class="balance-card">
+          <div class="income-field">
+            <input v-model="incomeInput" type="number" name="income" id="income" placeholder="Add Income" />
+            <button @click="addIncome">Enter</button>
+          </div>
+          <p>Your Balance</p>
+          <h1>${{ balance.toFixed(2) }}</h1>
+          <div class="goals">
+            <div class="goal blue">
+              <p>${{ expenses.toFixed(2) }}</p>
+              <span>Expense</span>
+            </div>
+            <div class="goal orange">
+              <p>${{ income.toFixed(2) }}</p>
+              <span>Income</span>
+            </div>
+          </div>
+        </div>
+        <div class="transaction-summary">
+          <h2>Balance</h2>
+          <ul>
+            <li v-for="(transaction, index) in transactions" :key="index">
+              <div :class="transaction.iconClass"></div>
+              <div>
+                <p>{{ transaction.name }}</p>
+                <span>{{ transaction.detail }}</span>
+              </div>
+              <p :class="transaction.amountClass">{{ transaction.amount }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </template>
   
-  <script>
+  
+  <!-- <script>
   export default {
     name: 'BalanceSummary',
     data() {
@@ -46,8 +89,52 @@
       };
     },
   };
-  </script>
+  </script> -->
   
+  <script>
+export default {
+  name: 'BalanceSummary',
+  data() {
+    return {
+      incomeInput: '',  // Bind this to the input field
+      balance: 0,
+      income: 0,
+      expenses: 0,
+      transactions: [
+        
+      ],
+    };
+  },
+  methods: {
+    addIncome() {
+      const incomeAmount = parseFloat(this.incomeInput);
+      
+      // Validate if the input is a valid number
+      if (isNaN(incomeAmount) || incomeAmount <= 0) {
+        alert('Please enter a valid amount.');
+        return;
+      }
+      
+      // Update balance and income
+      this.balance += incomeAmount;
+      this.income += incomeAmount;
+      
+      // Add transaction
+      this.transactions.push({
+        name: 'Income Added',
+        detail: 'Added income',
+        amount: `+$${incomeAmount.toFixed(2)}`,
+        iconClass: 'icon income',
+        amountClass: 'positive'
+      });
+      
+      // Clear the input field
+      this.incomeInput = '';
+    }
+  }
+};
+</script>
+
   <style scoped>
 
 
@@ -148,6 +235,27 @@
     padding-right: 280px;
     padding-left: 0;
     font-size: 20px;
+  }
+
+  .income-field{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .income-field input{
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+
+  .income-field button{
+    background-color: rgb(241, 241, 241);
+    color: green;
+    padding: 12px;
+    border-radius: 5px;
   }
   
   /*.transaction-summary .icon {

@@ -1,7 +1,7 @@
 <template>
   <div class="login-container">
-    <h2>Login</h2>
-    <p>Sign in to continue</p>
+    <h2>Ingia</h2>
+    <p>Je, tayari una akaunti? <router-link to="/register" class="link">Sajili</router-link></p>
     
     <!-- Display error message if there's any -->
     
@@ -24,7 +24,7 @@
           required
         />
       </div>
-      <button type="submit" class="login-button">Login</button>
+      <button type="submit" class="login-button">Ingia</button>
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </form>
   </div>
@@ -82,6 +82,7 @@ async function submitLogin() {
 }
 
 h2 {
+  /* margin-top: 10px; */
   font-size: 2rem;
   margin-bottom: 10px;
   color: black;
@@ -90,6 +91,12 @@ h2 {
 p {
   margin-bottom: 20px;
   color: black;
+  
+}
+
+.link {
+  text-decoration: underline;
+  color: inherit;
 }
 
 .error-message {

@@ -8,50 +8,74 @@
         <form @submit.prevent="submitPayment">
           <div class="field1">
             <label for="bill" id="bill">Ulicho lipia:</label>
-            <select v-model="name" type="text" id="bill" class="inputBill" required >
-      <option value="" disabled>Chagua jina la ulicho lipia</option>
-      <option value="maji">Maji</option>
-      <option value="umeme">Umeme</option>
-      <option value="kodi">Kodi</option>
-      <option value="vifaa">Vifaa</option>
-      <option value="vinginevyo">Vinginevyo</option>
-    </select>
+            <select
+              v-model="name"
+              type="text"
+              id="bill"
+              class="inputBill"
+              required
+            >
+              <!-- <option value="" disabled>Chagua jina la ulicho lipia</option> -->
+              <option value="maji">Maji</option>
+              <option value="umeme">Umeme</option>
+              <option value="kodi">Kodi</option>
+              <option value="vifaa">Vifaa</option>
+              <option value="vinginevyo">Vinginevyo</option>
+            </select>
           </div>
 
           <div class="field2">
             <label for="pNumber" id="pNumber">Namba ya simu:</label>
-            <input v-model="phoneNumber" type="number" id="pNumber" class="inputNumber" required />
-            
+            <input
+              v-model="phoneNumber"
+              type="tel"
+              id="pNumber"
+              class="inputNumber"
+              required
+              pattern="[0-9]{10}"
+              title="Please enter a valid phone number (10 digits)"
+            />
           </div>
 
           <div class="field3">
             <label for="mPayment" id="mPayment">Mtandao:</label>
             <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
-            <select v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required >
-      <option value="" disabled>Ingiza mtandao wa simu</option>
-      <option value="m-pesa">m-pesa</option>
-      <option value="Tigopesa">Tigopesa</option>
-      <option value="Halopesa">Halopesa</option>
-      <option value="airtelmoney">airtelmoney</option>
-      <option value="Mitandao mingine">Mitandao mingine</option>
-    </select>
+            <select
+              v-model="mobilePayment"
+              type="text"
+              id="mPayment"
+              class="inputPayment"
+              required
+            >
+              <!-- <option value="" disabled>Ingiza mtandao wa simu</option> -->
+              <option value="m-pesa">m-pesa</option>
+              <option value="Tigopesa">Tigopesa</option>
+              <option value="Halopesa">Halopesa</option>
+              <option value="airtelmoney">airtelmoney</option>
+              <!-- <option value="Mitandao mingine">Mitandao mingine</option> -->
+            </select>
           </div>
 
           <div class="field4">
             <label for="amount" id="amount">Kiasi:</label>
-            <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
-            <select v-model="amount" type="text" id="amount" class="amount" required >
+            <input
+              v-model="amount"
+              type="text"
+              id="amount"
+              class="amount"
+              required
+            />
+            <!-- <select v-model="amount" type="text" id="amount" class="amount" required >
       <option value="" disabled>Ingiza kiasi</option>
       <option value="10000">10000</option>
       <option value="20000">20000</option>
       <option value="30000">30000</option>
       <option value="40000">40000</option>
-      <option value="nje">Kiasi nje ya hivi</option>
-    </select>
+    </select> -->
           </div>
 
           <div class="button1">
-            <button id="button" type="submit">Okay</button>
+            <button id="button" type="submit">Tuma</button>
           </div>
         </form>
       </div>
@@ -60,42 +84,47 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
-const name = ref('');
-const phoneNumber = ref('');
-const mobilePayment = ref('');
+const name = ref("");
+const phoneNumber = ref("");
+const mobilePayment = ref("");
+const amount = ref("");
 
 async function submitPayment() {
   try {
-    const response = await fetch('http://localhost:5001/servers/completePayment', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        bill: name.value,
-        pNumber: phoneNumber.value,
-        mPayment: mobilePayment.value,
-      }),
-    });
+    const response = await fetch(
+      "http://localhost:5001/servers/completePayment",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          bill: name.value,
+          pNumber: phoneNumber.value,
+          mPayment: mobilePayment.value,
+          amount: amount.value,
+        }),
+      }
+    );
 
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
 
     const data = await response.json();
-    alert('Data has been submitted');
-    name.value = '';
-    phoneNumber.value = '';
-    mobilePayment.value = '';
-    console.log('Payment data stored:', data);
+    alert("Data has been submitted");
+    name.value = "";
+    phoneNumber.value = "";
+    mobilePayment.value = "";
+    amount.value = "";
+    console.log("Payment data stored:", data);
   } catch (error) {
-    console.error('Error storing payment data:', error);
+    console.error("Error storing payment data:", error);
   }
 }
 </script>
-
 
 <style scoped>
 /* .cBody {
@@ -109,7 +138,7 @@ async function submitPayment() {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #43B02A;
+  background-color: #43b02a;
 }
 
 h1 {
@@ -145,9 +174,9 @@ h1 {
   margin-top: 10px;
 }
 
-input{
+input {
   border: solid 1px #555555;
-  background-color: #43B02A;
+  background-color: #43b02a;
 }
 
 .button1 {
@@ -162,7 +191,6 @@ input{
   margin-left: 100px;
   border-radius: 10px;
   border: solid 1px;
-
 }
 
 #bill,
@@ -177,12 +205,10 @@ input{
 .inputPayment,
 .amount {
   border: solid 1px #555555;
-  background-color: #43B02A;
+  background-color: #43b02a;
 }
 
-#button{
+#button {
   width: 100px;
 }
-
-
 </style>

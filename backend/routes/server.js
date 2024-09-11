@@ -195,12 +195,13 @@ router.post("/completePayment", (req, res) => {
   const bill = req.body.bill;
   const pNumber = req.body.pNumber;
   const mPayment = req.body.mPayment;
+  const amount = req.body.amount;
 
-  const newTodo = { bill, pNumber, mPayment };
+  const newTodo = { bill, pNumber, mPayment, amount };
 
   console.log(newTodo.title)
-  const sql = "INSERT INTO completepayment (bill, pNumber, mPayment) VALUES (?, ?, ?)";
-  db.query(sql, [bill, pNumber, mPayment], (err, result) => {
+  const sql = "INSERT INTO completepayment (bill, pNumber, mPayment, amount) VALUES (?, ?, ?, ?)";
+  db.query(sql, [bill, pNumber, mPayment, amount], (err, result) => {
     if (err) {
       throw err;
     }

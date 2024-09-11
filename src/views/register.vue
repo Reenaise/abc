@@ -1,10 +1,10 @@
 <template>
   <div class="signup-container">
-    <h2>Create new Account</h2>
-    <p>Already Registered? <a href="login.vue">Login</a></p>
+    <h2>Unda akaunti mpya</h2>
+    <p>Tayari una akaunti? <router-link to="/login">Ingia</router-link></p>
     <form @submit.prevent="submitSignup">
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name">Jina</label>
         <input
             v-model="name"
             type="text"
@@ -33,41 +33,14 @@
         />
       </div>
       <div class="form-group">
-        <label for="dob">Date of Birth</label>
+        <label for="dob">Tarehe ya Kuzaliwa</label>
         <input v-model="dob" type="date" id="dob"/>
       </div>
-      <button type="submit" class="signup-button">Sign Up</button>
+      <button type="submit" class="signup-button">Sajili</button>
     </form>
   </div>
 </template>
 
-<!-- export default {
-  data() {
-    return {
-      name: '',
-      email: '',
-      password: '',
-      dob: ''
-    };
-  },
-  methods: {
-    async submitSignup() {
-      try {
-        const response = await axios.post('http://localhost:8000/api/register/', {
-          name: this.name,
-          email: this.email,
-          password: this.password
-        });
-        console.log(response.data);
-        alert("Registration successful!");
-      } catch (error) {
-        console.error(error);
-        alert("Registration failed: " + error.response.data.error);
-      }
-    }
-  }
-};
-</script>  -->
 
 <script setup>
 import { ref } from 'vue';
