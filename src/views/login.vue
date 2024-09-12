@@ -8,7 +8,7 @@
     
     <form @submit.prevent="submitLogin">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email"> Barua Pepe</label>
         <input
           v-model="email"
           type="email"
@@ -17,7 +17,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">NenoSiri</label>
         <input
           v-model="password"
           type="password"
