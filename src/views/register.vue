@@ -9,11 +9,11 @@
         <input v-model="name" type="text" id="name" required />
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">Barua Pepe</label>
         <input v-model="email" type="email" id="email" required />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">NenoSiri</label>
         <input v-model="password" type="password" id="password" required />
       </div>
       <div class="form-group">
@@ -21,7 +21,7 @@
         <input v-model="dob" type="date" id="dob" />
       </div>
       <div class="form-group">
-        <label for="incomeRange">Income Range</label>
+        <label for="incomeRange">Kipato Chako</label>
         <select
         v-model="incomeRange"
         type="text"
