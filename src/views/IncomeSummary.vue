@@ -90,30 +90,33 @@
     
     
     table {
-      width: 100%;
-      text-align: center;
-      box-shadow: 2px 4px 8px;
-      /* border-right: #555555;
-      border-left: #555555; */
-      /* margin-right: 50px;
-      margin-left: 60px; */
-      /* border-collapse: collapse; */
-    }
-    
-    th, td {
-      /* border: 1px solid #ddd; */
-      padding: 20px;
-    
-      /* box-shadow: 0 1px 1px; */
-      /* border-top: solid 1px black; */
-     
-    }
-    
-    tr {
-      /* border: 1px solid #ddd; */
-      padding: 8px;
-      box-shadow: 0 0 1px;
-      /* border-top: solid 1px black; */
-     
-    }
+    width: 100%;
+    text-align: center;
+    box-shadow: 2px 4px 8px black;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+  }
+  
+  th, td {
+    padding: 20px;
+    border: 1px solid #555; /* Dark gray border for a subtle effect */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #1a1a1a; /* Slightly lighter black for even rows */
+  }
+  
+  tr:hover {
+    background-color: #333; /* Dark gray on hover for contrast */
+  }
+
+  th {
+    background-color: #333; /* Dark gray header background */
+    color: #fff; /* White text for the header */
+    text-transform: uppercase; /* Optional: capitalize headers */
+  }
+
+  td {
+    color: #ccc; /* Light gray text for better readability */
+  }
     </style>

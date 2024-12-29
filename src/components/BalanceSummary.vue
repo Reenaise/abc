@@ -74,7 +74,7 @@ export default {
   margin-top: 20px;
 }
 .goal {
-  background-color: #ffffff;
+  background-color: #1A1A1A;
   border-radius: 10px;
   padding: 10px;
   margin-right: 10px;
@@ -87,7 +87,7 @@ export default {
   color: black;
 }
 .transaction-summary {   /* white card */
-  background-color: white;
+  background-color: #1A1A1A;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

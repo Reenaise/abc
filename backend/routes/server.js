@@ -131,11 +131,11 @@ router.post('/user', async (req, res) => {
   try {
     const { name, email, password, dob, incomeRange } = req.body;
 
-    // Validate the required fields
+    // Validate required fields
     if (!name || !email || !password || !dob || !incomeRange) {
       return res.status(400).json({ error: "All fields are required" });
     }
-
+    
     // Hash the password before storing it
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -147,9 +147,11 @@ router.post('/user', async (req, res) => {
         return res.status(500).json({ error: "Database error", details: err });
       }
 
-      newUser.id = result.insertId; // Store the newly created user ID
+      newUser.id = result.insertId;
+      
       res.status(201).json(newUser);
     });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });

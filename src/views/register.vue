@@ -125,6 +125,8 @@ label {
 
 input, select {
   border: solid 1px #555555;
+    color: black;
+
   /* background-color: #43b02a; */
 }
 
@@ -137,7 +139,7 @@ select {
 
 .signup-button {
   margin-bottom: 40px;
-  background-color: yellow;
+  background-color: #00FF00;
   border: solid 1px;
   margin-top: 4px;
   /* margin-top: 10px; */

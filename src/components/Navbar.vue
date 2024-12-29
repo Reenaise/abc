@@ -9,6 +9,7 @@ const isActiveLink = (routePath) => {
 </script>
 
 <template>
+  <div >
   <nav class="bg-customGreen border-b border-green-500">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
@@ -176,11 +177,15 @@ const isActiveLink = (routePath) => {
       </div>
     </div>
   </nav>
+  </div>
 </template>
 
 
 <style>
-.bg-yellow{
+/* .bg-yellow{
   background-color: yellow;
+} */
+.navbar{
+  background-color: green;
 }
 </style>

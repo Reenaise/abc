@@ -3,15 +3,16 @@
 
   <div class="cBody">
     <div class="cContainer">
-      <h1>PAYMENTS</h1>
-      <p id="pFirst">Enter payment details:</p>
+      <h1>MAPATO</h1>
+      <p id="pFirst">Ingiza taarifa kuhusu mapato yako:</p>
 
       <div class="cForm">
         <form @submit.prevent="submitPayment">
           <div class="field1">
             <label for="reference" id="reference"
               >Utambulisho wa Muamala:</label
-            >
+            > 
+            <br>
             <input
               v-model="reference"
               type="text"
@@ -23,6 +24,7 @@
 
           <div class="field2">
             <label for="pNumber" id="pNumber">Namba ya simu:</label>
+            <br>
             <input
               v-model="phoneNumber"
               type="tel"
@@ -36,6 +38,7 @@
 
           <div class="field3">
             <label for="mPayment" id="mPayment">Mtandao:</label>
+            <br>
             <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
             <select
               v-model="mobilePayment"
@@ -55,6 +58,7 @@
 
           <div class="field4">
             <label for="amount" id="amount">Kiasi:</label>
+            <br>
             <input
               v-model="amount"
               type="text"
@@ -73,6 +77,7 @@
 
           <div class="field4">
             <label for="dob" id="dob">Tarehe:</label>
+            <br>
             <input v-model="dob" type="date" id="dob" />
           </div>
 
@@ -130,88 +135,91 @@ async function submitPayment() {
 </script>
 
 <style scoped>
-/* .cBody {
-        margin: 100px;
-        background-color: #43B02A;
-        height: 100vh;
-    } */
+
+.cBody {
+  padding: 20px;
+  /* background-color: #f7f7f7; */
+  min-height: 100vh;
+}
 
 .cContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* background-color: #43b02a; */
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 h1 {
-  margin-top: 15vh;
-  margin-bottom: 2vh;
-  /* font-weight: 500; */
+  font-size: 24px;
+  /* color: #333; */
 }
 
-/* #pFirst {
-  font-weight: 500;
-} */
+#pFirst {
+  font-size: 14px;
+  /* color: #555; */
+}
 
 .cForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
-.field1,
-.field2,
-.field3,
-.field4 {
+.field {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-.field2,
-.field3,
-.field4 {
-  margin-top: 10px;
+label {
+  font-size: 14px;
+  /* color: #333; */
+  margin-bottom: 5px;
 }
 
 input {
-  border: solid 1px #555555;
-  /* background-color: #43b02a; */
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1A1A1A;
+  /* color: #F8F9FA; */
+}
+
+
+select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1A1A1A;
+  /* color: #F8F9FA; */
+}
+
+input:focus,
+select:focus {
+  /* border-color: #43b02a; */
+  outline: none;
 }
 
 .button1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40vh;
-  background-color: yellow;
+  text-align: center;
   margin-top: 20px;
-  width: 100px;
-  margin-left: 100px;
-  border-radius: 10px;
-  border: solid 1px;
-}
-
-/* #bill,
-#pNumber,
-#mPayment,
-#amount {
-  font-weight: 500;
-} */
-
-.inputBill,
-.inputNumber,
-.inputPayment,
-.amount {
-  border: solid 1px #555555;
-  /* background-color: #43b02a; */
 }
 
 #button {
-  width: 100px;
+  background-color: #43b02a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #36a020;
 }
 </style>

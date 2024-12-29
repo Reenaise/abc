@@ -66,10 +66,10 @@ onMounted(async () => {
   </div>
 </div>
 </template>
-
+ 
 <style scoped>
 #whole{
-  background-color: #F5F5F5;
+  background-color: #1A1A1A;
   /* height: 10vh; */
   ;
 }

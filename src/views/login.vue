@@ -120,11 +120,12 @@ label {
 
 input {
   border: solid 1px #555555;
+    color: black;
   /* background-color: #43B02A; */
 }
 
 .login-button {
-  background-color: yellow;
+  background-color: #00FF00;
   margin-top: 4px;
   width: 100px;
   margin-left: 48px;

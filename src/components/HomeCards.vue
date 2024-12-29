@@ -70,7 +70,7 @@ import image from '@/assets/img/image.png';
 
 
 .bg-customGreen {
-  background-color: #F5F5F5 ; /* Path to your background iFFFFFFmage */
+  background-color: #1A1A1A ; /* Path to your background iFFFFFFmage */
   background-size: cover; /* Ensures the image covers the entire element */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center center; /* Centers the image in the element */
