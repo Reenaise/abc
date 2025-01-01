@@ -1,8 +1,10 @@
 <template>
   <Navbar />
+
+  <div class="cBody">
   <div class="signup-container">
-    <h2>Unda akaunti mpya</h2>
-    <p>Tayari una akaunti? <router-link to="/login">Ingia</router-link></p>
+    <h2>UNDA AKAUNTI MPYA</h2>
+    <p id="pFirst">Tayari una akaunti? <router-link to="/login">Ingia</router-link></p>
     <form @submit.prevent="submitSignup">
       <div class="form-group">
         <label for="name">Jina</label>
@@ -39,8 +41,11 @@
       </select>
       </div>
      
-      <button type="submit" class="signup-button">Sajili</button>
+      <div class="button1">
+            <button id="button" type="submit">Sajili</button>
+          </div>
     </form>
+  </div>
   </div>
 </template>
 
@@ -85,66 +90,98 @@ async function submitSignup() {
 </script>
 
 <style scoped>
+
+.cBody {
+  padding: 20px;
+  /* background-color: #f7f7f7; */
+  min-height: 100vh;
+}
+
 .signup-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  /* background-color: #43b02a; */
-  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 50px;
+  background: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 24px;
   margin-bottom: 10px;
-  /* color: black; */
+  /* color: #333; */
 }
 
-p {
-  margin-bottom: 20px;
-  /* color: black; */
+#pFirst {
+  font-size: 14px;
+  margin-bottom: 16px;
+  /* color: #555; */
 }
+
 
 a {
   /* color: black; */
   text-decoration: underline;
 }
 
-.form-group {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 300px;
+.cForm {
+  margin-top: 20px;
 }
+
 
 label {
-  display: block;
+  font-size: 14px;
+  /* color: #333; */
   margin-bottom: 5px;
-  /* color: black; */
 }
 
-input, select {
-  border: solid 1px #555555;
-    color: black;
-
-  /* background-color: #43b02a; */
+input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1A1A1A;
+  width: 100%;
+  /* color: #F8F9FA; */
 }
+
 
 select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1A1A1A;
   width: 100%;
-}
-#dob {
-  width: 100%;
+  /* color: #F8F9FA; */
 }
 
-.signup-button {
-  margin-bottom: 40px;
-  background-color: #00FF00;
-  border: solid 1px;
-  margin-top: 4px;
-  /* margin-top: 10px; */
-  width: 100px;
-  margin-left: 50px;
-  border-radius: 10px;
+input:focus,
+select:focus {
+  /* border-color: #43b02a; */
+  outline: none;
+}
+
+.button1 {
+  text-align: center;
+  margin-top: 20px;
+  
+  
+}
+
+#button {
+  background-color: #14532D;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+#button:hover {
+  background-color: #003300;
 }
 </style>

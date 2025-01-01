@@ -158,22 +158,24 @@ async function submitPayment() {
 }
 
 .cContainer {
-  max-width: 500px;
+  max-width: 800px;
   margin: auto;
-  padding: 20px;
+  padding: 50px;
   background: #333;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  /* text-align: center; */
 }
 
 h1 {
   font-size: 24px;
+  margin-bottom: 10px;
   /* color: #333; */
 }
 
 #pFirst {
   font-size: 14px;
+  margin-bottom: 16px;
   /* color: #555; */
 }
 
@@ -181,12 +183,12 @@ h1 {
   margin-top: 20px;
 }
 
-.field {
+/* .field {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
   text-align: left;
-}
+} */
 
 label {
   font-size: 14px;
@@ -200,6 +202,8 @@ input {
   border-radius: 4px;
   font-size: 14px;
   background-color: #1A1A1A;
+  width: 100%;
+  margin-bottom: 15px;
   /* color: #F8F9FA; */
 }
 
@@ -210,6 +214,8 @@ select {
   border-radius: 4px;
   font-size: 14px;
   background-color: #1A1A1A;
+  width: 100%;
+  margin-bottom: 15px;
   /* color: #F8F9FA; */
 }
 
@@ -225,7 +231,7 @@ select:focus {
 }
 
 #button {
-  background-color: #43b02a;
+  background-color: #14532D;
   color: white;
   padding: 10px 20px;
   border: none;

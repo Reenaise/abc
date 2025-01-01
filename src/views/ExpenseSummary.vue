@@ -1,10 +1,10 @@
 <template>
 <Navbar2 />
 
+<div class="cBody">
   <div class="report-container">
-    <h1>Matumizi</h1>
-  
-    
+
+    <h1>MATUMIZI</h1>
     <!-- Data Table -->
     <table>
       <thead>
@@ -26,6 +26,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
 </template>
 
@@ -59,22 +60,27 @@ onMounted(async () => {
 <style scoped>
 
 h1{
-  margin-top: 25px;
+  /* margin-top: 2px; */
   margin-bottom: 25px;
-  font-size: x-large;
+  font-size: 24px;
 }
 
 
-.report-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* background-color: #43B02A;   */
-  font-weight: 500;
-  /* margin: 20px; */
-  /* font-family: Arial, sans-serif; */
+.cBody {
+  padding: 20px;
+  /* background-color: #f7f7f7; */
 }
+
+.report-container{
+  max-width: 800px;
+  margin: auto;
+  padding: 50px;
+  background: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
+}
+
 
 
 .search-container {
@@ -96,7 +102,7 @@ table {
     width: 100%;
     text-align: center;
     box-shadow: 2px 4px 8px black;
-    background-color: #000; /* Black background */
+    background-color: #1a1a1a;
     color: #fff; /* White text color */
   }
   
@@ -106,7 +112,7 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color: #1a1a1a; /* Slightly lighter black for even rows */
+    background-color: #333;
   }
   
   tr:hover {
@@ -114,7 +120,7 @@ table {
   }
 
   th {
-    background-color: #333; /* Dark gray header background */
+    background-color: black;
     color: #fff; /* White text for the header */
     text-transform: uppercase; /* Optional: capitalize headers */
   }

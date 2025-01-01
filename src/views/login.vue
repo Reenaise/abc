@@ -1,8 +1,10 @@
 <template>
   <Navbar/>
+
+  <div class="cBody">
   <div class="login-container">
-    <h2>Ingia</h2>
-    <p>Je, tayari una akaunti? <router-link to="/register" class="link">Sajili</router-link></p>
+    <h2>INGIA</h2>
+    <p id="pFirst">Umesajili? <router-link to="/register" class="link">Sajili</router-link></p>
     
     <!-- Display error message if there's any -->
     
@@ -25,9 +27,12 @@
           required
         />
       </div>
-      <button type="submit" class="login-button">Ingia</button>
+      <div class="button1">
+            <button id="button" type="submit">Ingia</button>
+          </div>
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </form>
+  </div>
   </div>
   
 </template>
@@ -72,33 +77,99 @@ async function submitLogin() {
 }
 </script>
 
+
 <style scoped>
+
+.cBody {
+  padding: 20px;
+  /* background-color: #f7f7f7; */
+  min-height: 100vh;
+}
+
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  /* background-color: #43B02A; */
-  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 50px;
+  background: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
 }
 
 h2 {
-  /* margin-top: 10px; */
-  font-size: 2rem;
+  font-size: 24px;
   margin-bottom: 10px;
-  /* color: black; */
+  /* color: #333; */
 }
 
-p {
-  margin-bottom: 20px;
+#pFirst {
+  font-size: 14px;
+  margin-bottom: 16px;
+  /* color: #555; */
+}
+
+a {
   /* color: black; */
+  text-decoration: underline;
+}
+
+.cForm {
+  margin-top: 20px;
+}
+
+
+label {
+  font-size: 14px;
+  /* color: #333; */
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1A1A1A;
+  width: 100%;
+  /* color: #F8F9FA; */
+}
+
+
+select {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1A1A1A;
+  width: 100%;
+  /* color: #F8F9FA; */
+}
+
+input:focus,
+select:focus {
+  /* border-color: #43b02a; */
+  outline: none;
+}
+
+.button1 {
+  text-align: center;
+  margin-top: 20px;
   
 }
 
-.link {
-  text-decoration: underline;
-  color: inherit;
+#button {
+  background-color: #14532D;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+#button:hover {
+  background-color: #003300;
 }
 
 .error-message {
@@ -106,30 +177,4 @@ p {
   margin-top: 20px;
 }
 
-.form-group {
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 300px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  /* color: black; */
-}
-
-input {
-  border: solid 1px #555555;
-    color: black;
-  /* background-color: #43B02A; */
-}
-
-.login-button {
-  background-color: #00FF00;
-  margin-top: 4px;
-  width: 100px;
-  margin-left: 48px;
-  border-radius: 10px;
-  border: solid 1px;
-}
 </style>
