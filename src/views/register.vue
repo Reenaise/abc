@@ -23,7 +23,7 @@
         <input v-model="dob" type="date" id="dob" />
       </div>
       <div class="form-group">
-        <label for="incomeRange">Income Range</label>
+        <label for="incomeRange">Kipato</label>
         <select
         v-model="incomeRange"
         type="text"

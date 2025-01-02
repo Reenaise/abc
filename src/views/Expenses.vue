@@ -4,12 +4,12 @@
   <div class="cBody">
     <div class="cContainer">
       <h1>MATUMIZI</h1>
-      <p id="pFirst">Ingiza taarifa kuhusu matumizi yako:</p>
+      <p id="pFirst">Tafadhali, ingiza taarifa kuhusu matumizi:</p>
 
       <div class="cForm">
         <form @submit.prevent="submitPayment">
           <div class="field1">
-            <label for="bill" id="bill">Ulicho lipia:</label>
+            <label for="bill" id="bill">Ulicho lipia</label>
             <br>
             <select
               v-model="name"
@@ -28,7 +28,7 @@
           </div>
 
           <div class="field2">
-            <label for="pNumber" id="pNumber">Namba ya simu:</label>
+            <label for="pNumber" id="pNumber">Namba ya simu</label>
             <br>
             <input
               v-model="phoneNumber"
@@ -42,7 +42,7 @@
           </div>
 
           <div class="field3">
-            <label for="mPayment" id="mPayment">Mtandao:</label>
+            <label for="mPayment" id="mPayment">Mtandao</label>
             <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
             <br>
             <select
@@ -62,7 +62,7 @@
           </div>
 
           <div class="field4">
-            <label for="amount" id="amount">Kiasi:</label>
+            <label for="amount" id="amount">Kiasi</label>
             <br>
             <input
               v-model="amount"
@@ -74,13 +74,13 @@
           </div>
 
           <div class="field4">
-            <label for="dob" id="dob">Tarehe:</label>
+            <label for="dob" id="dob">Tarehe</label>
             <br>
             <input v-model="dob" type="date" id="dob" />
           </div>
 
           <div class="field4">
-            <label for="reference" id="reference">Utambulisho wa Muamala:</label>
+            <label for="reference" id="reference">Utambulisho wa Muamala</label>
             <br>
             <input
               v-model="reference"

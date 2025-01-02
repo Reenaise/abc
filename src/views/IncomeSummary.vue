@@ -10,7 +10,7 @@
         <table>
           <thead>
             <tr>
-              <th>Pato Lako</th>
+              <th>Pato</th>
               <th>Mtandao</th>
               <th>Muamala</th>
               <th>Tarehe</th>

@@ -4,26 +4,14 @@
   <div class="cBody">
     <div class="cContainer">
       <h1>MAPATO</h1>
-      <p id="pFirst">Ingiza taarifa kuhusu mapato yako:</p>
+      <p id="pFirst">Tafadhali, ingiza taarifa kuhusu mapato:</p>
 
       <div class="cForm">
         <form @submit.prevent="submitPayment">
-          <div class="field1">
-            <label for="reference" id="reference"
-              >Utambulisho wa Muamala:</label
-            > 
-            <br>
-            <input
-              v-model="reference"
-              type="text"
-              id="reference"
-              class="reference"
-              required
-            />
-          </div>
+          
 
           <div class="field2">
-            <label for="pNumber" id="pNumber">Namba ya simu:</label>
+            <label for="pNumber" id="pNumber">Namba ya simu</label>
             <br>
             <input
               v-model="phoneNumber"
@@ -37,7 +25,7 @@
           </div>
 
           <div class="field3">
-            <label for="mPayment" id="mPayment">Mtandao:</label>
+            <label for="mPayment" id="mPayment">Mtandao</label>
             <br>
             <!-- <input v-model="mobilePayment" type="text" id="mPayment" class="inputPayment" required /> -->
             <select
@@ -57,7 +45,7 @@
           </div>
 
           <div class="field4">
-            <label for="amount" id="amount">Kiasi:</label>
+            <label for="amount" id="amount">Kiasi</label>
             <br>
             <input
               v-model="amount"
@@ -81,6 +69,19 @@
             <input v-model="dob" type="date" id="dob" />
           </div>
 
+          <div class="field1">
+            <label for="reference" id="reference"
+              >Utambulisho wa Muamala</label
+            > 
+            <br>
+            <input
+              v-model="reference"
+              type="text"
+              id="reference"
+              class="reference"
+              required
+            />
+          </div>
 
           <div class="button1">
             <button id="button" type="submit">Tuma</button>

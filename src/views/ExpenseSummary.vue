@@ -9,7 +9,7 @@
     <table>
       <thead>
         <tr>
-          <th>Bill</th>
+          <th>Bili</th>
           <th>Namba</th>
           <th>Mtandao</th>
           <th>Kiasi</th>
